@@ -1,6 +1,6 @@
 # AyurBytes: Ayurvedic Diet Planner (Proof of Concept)
 
-(./1.png)
+![AyurBytes App Screenshot](./1.png)
 ## 🌟 Introduction
 
 `ayurBytes` is a Proof of Concept (POC) for an Ayurvedic Diet Management Software. This initial application demonstrates the core functionality of generating a personalized Ayurvedic diet plan based on a user's `Prakriti` (body constitution), age, and other basic health parameters.
