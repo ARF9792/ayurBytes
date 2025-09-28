@@ -1,0 +1,86 @@
+[
+  {
+    "id": 1,
+    "name": "Moong Dal",
+    "category": "Lentil",
+    "calories": 105,
+    "ayurvedic": {
+      "rasa": ["Sweet", "Astringent"],
+      "guna": ["Light", "Dry"],
+      "virya": "Cooling",
+      "digestibility": "Easy"
+    }
+  },
+  {
+    "id": 2,
+    "name": "Basmati Rice (White)",
+    "category": "Grain",
+    "calories": 205,
+    "ayurvedic": {
+      "rasa": ["Sweet"],
+      "guna": ["Light", "Soft"],
+      "virya": "Cooling",
+      "digestibility": "Easy"
+    }
+  },
+  {
+    "id": 3,
+    "name": "Yogurt (Full Fat)",
+    "category": "Dairy",
+    "calories": 150,
+    "ayurvedic": {
+      "rasa": ["Sour", "Sweet"],
+      "guna": ["Heavy", "Oily"],
+      "virya": "Heating",
+      "digestibility": "Difficult"
+    }
+  },
+  {
+    "id": 4,
+    "name": "Spinach",
+    "category": "Vegetable",
+    "calories": 23,
+    "ayurvedic": {
+      "rasa": ["Astringent", "Sweet"],
+      "guna": ["Light", "Rough"],
+      "virya": "Cooling",
+      "digestibility": "Easy"
+    }
+  },
+  {
+    "id": 5,
+    "name": "Ghee (Clarified Butter)",
+    "category": "Fat",
+    "calories": 112,
+    "ayurvedic": {
+      "rasa": ["Sweet"],
+      "guna": ["Oily", "Smooth"],
+      "virya": "Cooling",
+      "digestibility": "Easy"
+    }
+  },
+  {
+    "id": 6,
+    "name": "Chicken Breast",
+    "category": "Protein",
+    "calories": 165,
+    "ayurvedic": {
+      "rasa": ["Sweet"],
+      "guna": ["Heavy", "Dry"],
+      "virya": "Heating",
+      "digestibility": "Difficult"
+    }
+  },
+  {
+    "id": 7,
+    "name": "Almonds",
+    "category": "Nut",
+    "calories": 164,
+    "ayurvedic": {
+      "rasa": ["Sweet"],
+      "guna": ["Heavy", "Oily"],
+      "virya": "Heating",
+      "digestibility": "Difficult"
+    }
+  }
+]
