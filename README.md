@@ -3,7 +3,7 @@
 ![AyurBytes App Screenshot](./1.png)
 
 ## 🚀 Live Demo
-[![Live Demo](https://img.shields.io/badge/Live-Demo-Go-green?style=for-the-badge)](https://ayurpoc.vercel.app/)
+[Visit the live deployment](https://ayurpoc.vercel.app/)
 
 ## 🌟 Introduction
 
