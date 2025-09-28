@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import foods from '@/data/foods.json';
 
+// MODIFIED: Added suitableFor to the interface
 interface Food {
   id: number;
   name: string;
@@ -11,6 +12,7 @@ interface Food {
     guna: string[];
     virya: string;
     digestibility: string;
+    suitableFor: string[];
   };
 }
 
@@ -20,45 +22,65 @@ interface DietPlan {
   dinner: Food[];
 }
 
+// ADDED: Helper function to determine age group
+function getAgeGroup(age: number): string {
+  if (age <= 12) {
+    return 'Child';
+  } else if (age >= 60) {
+    return 'Elderly';
+  } else {
+    return 'Adult';
+  }
+}
+
 export async function POST(request: NextRequest) {
   try {
-    const { prakriti } = await request.json();
+    // MODIFIED: Destructure both age and prakriti
+    const { age, prakriti } = await request.json();
 
-    if (!prakriti) {
+    if (!prakriti || age === undefined) {
       return NextResponse.json(
-        { error: 'Prakriti is required' },
+        { error: 'Prakriti and age are required' },
         { status: 400 }
       );
     }
+    
+    // ADDED: Determine the age group
+    const ageGroup = getAgeGroup(age);
 
     // Filter foods based on prakriti
-    let filteredFoods: Food[] = [];
+    let prakritiFilteredFoods: Food[] = [];
 
     switch (prakriti) {
       case 'Pitta':
-        filteredFoods = foods.filter(food => 
+        prakritiFilteredFoods = foods.filter(food => 
           food.ayurvedic.virya === 'Cooling'
         );
         break;
       
       case 'Vata':
-        filteredFoods = foods.filter(food => 
+        prakritiFilteredFoods = foods.filter(food => 
           food.ayurvedic.virya === 'Heating'
         );
         break;
       
       case 'Kapha':
-        filteredFoods = foods.filter(food => 
+        prakritiFilteredFoods = foods.filter(food => 
           food.ayurvedic.guna.includes('Light') || 
           food.ayurvedic.guna.includes('Dry')
         );
         break;
       
       default:
-        filteredFoods = foods;
+        prakritiFilteredFoods = foods as Food[];
     }
 
-    // Create diet plan
+    // MODIFIED: Add a second filter for the age group
+    const filteredFoods = prakritiFilteredFoods.filter(food => 
+      food.ayurvedic.suitableFor.includes(ageGroup)
+    );
+
+    // Create diet plan using the final filtered list
     const dietPlan: DietPlan = {
       breakfast: [],
       lunch: [],
@@ -94,13 +116,8 @@ export async function POST(request: NextRequest) {
       dietPlan.lunch.push(lunchVegetables[0]);
     }
 
-    // Dinner: Pick one "Grain" and one "Lentil"
-    const dinnerGrains = filteredFoods.filter(food => 
-      food.category === 'Grain'
-    );
-    const dinnerLentils = filteredFoods.filter(food => 
-      food.category === 'Lentil'
-    );
+    const dinnerGrains = lunchGrains.length > 1 ? lunchGrains.slice(1) : lunchGrains;
+    const dinnerLentils = filteredFoods.filter(food => food.category === 'Lentil');
 
     if (dinnerGrains.length > 0) {
       dietPlan.dinner.push(dinnerGrains[0]);

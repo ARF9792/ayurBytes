@@ -4,6 +4,13 @@ import { useState } from 'react';
 import PatientForm from './components/PatientForm';
 import DietChartDisplay from './components/DietChartDisplay';
 
+// Define the types for the data we'll be handling
+interface PatientFormData {
+  age: number;
+  gender: string;
+  prakriti: string;
+}
+
 interface Food {
   id: number;
   name: string;
@@ -23,20 +30,19 @@ interface DietPlan {
   dinner: Food[];
 }
 
-interface PatientFormData {
-  age: number;
-  gender: string;
-  prakriti: string;
-}
-
 export default function Home() {
+  // State to hold the generated diet plan
   const [dietPlan, setDietPlan] = useState<DietPlan | null>(null);
+  // State to manage loading UI
   const [isLoading, setIsLoading] = useState(false);
+  // State to handle potential errors
   const [error, setError] = useState<string | null>(null);
 
-  const handleSubmit = async (formData: PatientFormData) => {
+  // This function will be called when the form is submitted
+  const handleFormSubmit = async (data: PatientFormData) => {
     setIsLoading(true);
     setError(null);
+    setDietPlan(null); // Clear previous results
 
     try {
       const response = await fetch('/api/generate-diet', {
@@ -44,79 +50,60 @@ export default function Home() {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({
-          prakriti: formData.prakriti,
-        }),
+        // MODIFIED: Send both age and prakriti
+        body: JSON.stringify({ age: data.age, prakriti: data.prakriti }),
       });
 
       if (!response.ok) {
-        throw new Error('Failed to generate diet plan');
+        throw new Error('Failed to generate diet plan. Please try again.');
       }
 
-      const data = await response.json();
-      setDietPlan(data);
+      const result: DietPlan = await response.json();
+      setDietPlan(result);
+
     } catch (err) {
-      setError(err instanceof Error ? err.message : 'An error occurred');
+      setError(err instanceof Error ? err.message : 'An unknown error occurred.');
     } finally {
       setIsLoading(false);
     }
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-green-50 to-blue-50 py-12 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-4xl mx-auto">
-        {/* Header */}
-        <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">
-            Ayurvedic Diet Planner
-          </h1>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Discover your personalized Ayurvedic diet plan based on your unique constitution (Prakriti)
-          </p>
+    <main className="flex min-h-screen flex-col items-center justify-start p-4 sm:p-8 md:p-12 bg-gradient-to-br from-emerald-50 via-teal-50 to-cyan-50">
+      <div className="w-full max-w-4xl mx-auto space-y-12">
+        <div className="text-center">
+            <h1 className="text-5xl md:text-6xl font-extrabold mb-4">
+              <span className="bg-gradient-to-r from-emerald-600 via-teal-600 to-cyan-600 bg-clip-text text-transparent">
+                Ayurvedic Diet Planner
+              </span>
+            </h1>
+            <p className="text-lg text-gray-600">
+              Diet plan based on unique constitution (Prakriti).
+            </p>
         </div>
+        
+        {/* Pass the submit handler to the PatientForm component */}
+        <PatientForm onSubmit={handleFormSubmit} />
 
-        {/* Main Content */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          {/* Left Column - Form */}
-          <div>
-            <PatientForm onSubmit={handleSubmit} />
-            
-            {/* Loading State */}
-            {isLoading && (
-              <div className="bg-white rounded-lg shadow-md p-6 text-center">
-                <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-green-600 mx-auto mb-4"></div>
-                <p className="text-gray-600">Generating your personalized diet plan...</p>
-              </div>
-            )}
-
-            {/* Error State */}
-            {error && (
-              <div className="bg-red-50 border border-red-200 rounded-lg p-4 text-center">
-                <p className="text-red-700">{error}</p>
-                <button
-                  onClick={() => setError(null)}
-                  className="mt-2 text-red-600 hover:text-red-800 text-sm font-medium"
-                >
-                  Dismiss
-                </button>
-              </div>
-            )}
+        {isLoading && (
+          <div className="text-center p-8 text-lg font-semibold text-emerald-700">
+            Generating your personalized plan...
           </div>
+        )}
 
-          {/* Right Column - Diet Chart */}
-          <div>
-            <DietChartDisplay dietPlan={dietPlan} />
+        {error && (
+          <div className="text-center p-8 text-lg font-semibold text-red-600 bg-red-100 rounded-2xl">
+            Error: {error}
           </div>
-        </div>
+        )}
 
-        {/* Footer Info */}
-        <div className="mt-12 text-center text-gray-500 text-sm">
-          <p>
-            This is a Proof of Concept application for Ayurvedic diet planning. 
-            Consult with a qualified Ayurvedic practitioner for personalized medical advice.
-          </p>
-        </div>
+        {/* The DietChartDisplay will now appear here once a plan is generated */}
+        <DietChartDisplay dietPlan={dietPlan} />
+
+        <footer className="text-center text-gray-500 text-sm py-8">
+            This is a Proof of Concept application for Ayurvedic diet planning.
+        </footer>
       </div>
-    </div>
+    </main>
   );
 }
