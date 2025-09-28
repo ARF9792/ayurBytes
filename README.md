@@ -3,7 +3,7 @@
 ![AyurBytes App Screenshot](./1.png)
 
 ## 🚀 Live Demo
-[Visit the live deployment](https://ayurpoc.vercel.app/)
+🔗 [Click here to visit AyurPOC](https://ayurpoc.vercel.app/)
 
 ## 🌟 Introduction
 
