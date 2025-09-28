@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { Leaf, Heart, Shield, Sparkles, CheckCircle, AlertCircle, Star, Zap, Crown, Award, Target, Users } from 'lucide-react';
+import { Leaf, Heart, Shield, Sparkles, CircleCheck as CheckCircle, CircleAlert as AlertCircle, Star, Zap, Crown, Award, Target, Users } from 'lucide-react';
 import PatientForm from './components/PatientForm';
 import DietChartDisplay from './components/DietChartDisplay';
 
