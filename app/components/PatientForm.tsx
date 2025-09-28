@@ -20,7 +20,6 @@ export default function PatientForm({ onSubmit }: PatientFormProps) {
     e.preventDefault();
     const formData = new FormData(e.currentTarget);
     
-    // This will still work because of the new hidden input
     const data: PatientFormData = {
       age: Number(formData.get('age')),
       gender: formData.get('gender') as string,
@@ -76,7 +75,7 @@ export default function PatientForm({ onSubmit }: PatientFormProps) {
       <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/5 via-transparent to-teal-500/5"></div>
       <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-emerald-200/20 to-teal-200/20 rounded-full -translate-y-16 translate-x-16"></div>
       <div className="absolute bottom-0 left-0 w-24 h-24 bg-gradient-to-tr from-teal-200/20 to-emerald-200/20 rounded-full translate-y-12 -translate-x-12"></div>
-      
+
       <div className="relative p-8">
         <div className="text-center mb-10">
           <div className="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-emerald-400 via-emerald-500 to-teal-600 rounded-3xl flex items-center justify-center shadow-2xl shadow-emerald-500/25">
@@ -87,15 +86,13 @@ export default function PatientForm({ onSubmit }: PatientFormProps) {
               Patient Information
             </span>
           </h2>
-          <p className="text-gray-600 text-lg leading-relaxed">
-            Tell us about yourself to create your personalized wellness plan
-          </p>
           <div className="mt-4 flex justify-center">
             <div className="h-1 w-20 bg-gradient-to-r from-emerald-400 to-teal-500 rounded-full"></div>
           </div>
         </div>
-        
+
         <form onSubmit={handleSubmit} className="space-y-10">
+          {/* Age and Gender inputs remain the same */}
           <div className="space-y-4">
             <label htmlFor="age" className="flex items-center gap-3 text-lg font-bold text-gray-800 mb-4">
               <div className="w-8 h-8 bg-gradient-to-br from-emerald-400 to-teal-500 rounded-lg flex items-center justify-center shadow-md">
@@ -144,7 +141,7 @@ export default function PatientForm({ onSubmit }: PatientFormProps) {
               <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-emerald-500/5 to-teal-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
             </div>
           </div>
-
+          
           <div className="space-y-6">
             <div className="flex items-center gap-3 text-lg font-bold text-gray-800 mb-6">
               <div className="w-8 h-8 bg-gradient-to-br from-emerald-400 to-teal-500 rounded-lg flex items-center justify-center shadow-md">
@@ -220,9 +217,7 @@ export default function PatientForm({ onSubmit }: PatientFormProps) {
             <div className="absolute inset-0 bg-gradient-to-r from-white/20 via-transparent to-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
             <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
             <span className="relative flex items-center justify-center gap-3">
-              <Zap className="w-6 h-6 group-hover:rotate-12 transition-transform duration-300" />
-              Generate My Personalized Diet Plan
-              <Star className="w-5 h-5 group-hover:rotate-12 transition-transform duration-300" />
+              Generate Diet Plan
             </span>
           </button>
         </form>

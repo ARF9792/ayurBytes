@@ -26,8 +26,24 @@ interface DietChartDisplayProps {
 export default function DietChartDisplay({ dietPlan }: DietChartDisplayProps) {
   if (!dietPlan) {
     return (
-      <div className="text-center text-gray-500 py-8">
-        Submit the form to generate a diet plan.
+      <div className="relative overflow-hidden bg-gradient-to-br from-white via-emerald-50/30 to-teal-50/50 rounded-3xl shadow-2xl border border-emerald-100/50 backdrop-blur-sm">
+        <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/5 via-transparent to-teal-500/5"></div>
+        <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-emerald-200/20 to-teal-200/20 rounded-full -translate-y-16 translate-x-16"></div>
+        <div className="absolute bottom-0 left-0 w-24 h-24 bg-gradient-to-tr from-teal-200/20 to-emerald-200/20 rounded-full translate-y-12 -translate-x-12"></div>
+        
+        <div className="relative p-12 text-center">
+          <div className="w-28 h-28 mx-auto mb-8 bg-gradient-to-br from-emerald-400 via-emerald-500 to-teal-600 rounded-full flex items-center justify-center shadow-2xl shadow-emerald-500/25 animate-pulse">
+            <Utensils className="w-14 h-14 text-white" />
+          </div>
+          <p className="text-gray-600 leading-relaxed text-lg max-w-md mx-auto">
+            Complete the form to generate Ayurvedic diet plan tailored to the unique constitution.
+          </p>
+          <div className="mt-8 flex justify-center space-x-2">
+            <div className="w-2 h-2 bg-emerald-400 rounded-full animate-bounce"></div>
+            <div className="w-2 h-2 bg-emerald-500 rounded-full animate-bounce" style={{ animationDelay: '0.1s' }}></div>
+            <div className="w-2 h-2 bg-teal-500 rounded-full animate-bounce" style={{ animationDelay: '0.2s' }}></div>
+          </div>
+        </div>
       </div>
     );
   }
@@ -201,22 +217,47 @@ export default function DietChartDisplay({ dietPlan }: DietChartDisplayProps) {
   };
 
   return (
-    <div className="bg-white rounded-lg shadow-md p-6">
-      <h2 className="text-2xl font-bold text-gray-800 mb-6 text-center">
-        Your Ayurvedic Diet Plan
-      </h2>
+    <div className="relative overflow-hidden bg-gradient-to-br from-white via-emerald-50/30 to-teal-50/50 rounded-3xl shadow-2xl border border-emerald-100/50 backdrop-blur-sm">
+      <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/5 via-transparent to-teal-500/5"></div>
+      <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-emerald-200/10 to-teal-200/10 rounded-full -translate-y-32 translate-x-32"></div>
       
-      {renderMealSection('Breakfast', dietPlan.breakfast)}
-      {renderMealSection('Lunch', dietPlan.lunch)}
-      {renderMealSection('Dinner', dietPlan.dinner)}
-      
-      {dietPlan.breakfast.length === 0 && 
-       dietPlan.lunch.length === 0 && 
-       dietPlan.dinner.length === 0 && (
-        <div className="text-center text-gray-500 py-8">
-          No suitable foods found for your prakriti with the current food database.
+      <div className="relative p-8">
+        <div className="text-center mb-12">
+          <div className="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-emerald-400 via-emerald-500 to-teal-600 rounded-3xl flex items-center justify-center shadow-2xl shadow-emerald-500/25">
+            <Utensils className="w-10 h-10 text-white" />
+          </div>
+          <h2 className="text-4xl font-bold mb-3">
+            <span className="bg-gradient-to-r from-emerald-600 via-teal-600 to-cyan-600 bg-clip-text text-transparent">
+              Ayurvedic Diet Plan
+            </span>
+          </h2>
+          <div className="mt-6 flex justify-center">
+            <div className="h-1 w-24 bg-gradient-to-r from-emerald-400 to-teal-500 rounded-full"></div>
+          </div>
         </div>
-      )}
+        
+        <div className="space-y-8">
+          {renderMealSection('Breakfast', dietPlan.breakfast)}
+          {renderMealSection('Lunch', dietPlan.lunch)}
+          {renderMealSection('Dinner', dietPlan.dinner)}
+        </div>
+        
+        {dietPlan.breakfast.length === 0 && 
+         dietPlan.lunch.length === 0 && 
+         dietPlan.dinner.length === 0 && (
+          <div className="text-center py-16">
+            <div className="w-24 h-24 mx-auto mb-8 bg-gradient-to-br from-gray-200 to-gray-300 rounded-full flex items-center justify-center shadow-lg">
+              <Utensils className="w-12 h-12 text-gray-500" />
+            </div>
+            <h3 className="text-2xl font-bold text-gray-700 mb-4">
+              No Suitable Foods Found
+            </h3>
+            <p className="text-gray-500 max-w-lg mx-auto leading-relaxed text-lg">
+              We couldn't find suitable foods for your prakriti in our current database. 
+            </p>
+          </div>
+        )}
+      </div>
     </div>
   );
 }
