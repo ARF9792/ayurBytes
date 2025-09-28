@@ -1,11 +1,7 @@
 'use client';
 
-<<<<<<< HEAD
 import { useState } from 'react';
 import { User, Calendar, Users, Sparkles, Wind, Flame as Fire, Mountain, Star, Zap } from 'lucide-react';
-=======
-import { User, Calendar, Users, Sparkles, Wind, Flame as Fire, Mountain, Heart, Star, Zap } from 'lucide-react';
->>>>>>> 606f914579918d70c82d112d3367e822dd7154f0
 
 interface PatientFormData {
   age: number;
@@ -80,11 +76,7 @@ export default function PatientForm({ onSubmit }: PatientFormProps) {
       <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/5 via-transparent to-teal-500/5"></div>
       <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-emerald-200/20 to-teal-200/20 rounded-full -translate-y-16 translate-x-16"></div>
       <div className="absolute bottom-0 left-0 w-24 h-24 bg-gradient-to-tr from-teal-200/20 to-emerald-200/20 rounded-full translate-y-12 -translate-x-12"></div>
-<<<<<<< HEAD
-
-=======
       
->>>>>>> 606f914579918d70c82d112d3367e822dd7154f0
       <div className="relative p-8">
         <div className="text-center mb-10">
           <div className="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-emerald-400 via-emerald-500 to-teal-600 rounded-3xl flex items-center justify-center shadow-2xl shadow-emerald-500/25">
@@ -95,13 +87,9 @@ export default function PatientForm({ onSubmit }: PatientFormProps) {
               Patient Information
             </span>
           </h2>
-<<<<<<< HEAD
-          
-=======
           <p className="text-gray-600 text-lg leading-relaxed">
             Tell us about yourself to create your personalized wellness plan
           </p>
->>>>>>> 606f914579918d70c82d112d3367e822dd7154f0
           <div className="mt-4 flex justify-center">
             <div className="h-1 w-20 bg-gradient-to-r from-emerald-400 to-teal-500 rounded-full"></div>
           </div>
@@ -130,33 +118,6 @@ export default function PatientForm({ onSubmit }: PatientFormProps) {
             </div>
           </div>
 
-<<<<<<< HEAD
-        <form onSubmit={handleSubmit} className="space-y-10">
-          {/* Age and Gender inputs remain the same */}
-          <div className="space-y-4">
-            <label htmlFor="age" className="flex items-center gap-3 text-lg font-bold text-gray-800 mb-4">
-              <div className="w-8 h-8 bg-gradient-to-br from-emerald-400 to-teal-500 rounded-lg flex items-center justify-center shadow-md">
-                <Calendar className="w-4 h-4 text-white" />
-              </div>
-              Age
-            </label>
-            <div className="relative group">
-              <input
-                type="number"
-                id="age"
-                name="age"
-                required
-                min="1"
-                max="120"
-                className="w-full px-6 py-5 border-2 border-gray-200/50 rounded-2xl focus:outline-none focus:ring-4 focus:ring-emerald-100 focus:border-emerald-400 transition-all duration-300 text-lg font-semibold bg-white/80 backdrop-blur-sm hover:bg-white hover:shadow-lg group-hover:border-emerald-300"
-                placeholder="Enter your age"
-              />
-              <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-emerald-500/5 to-teal-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
-            </div>
-          </div>
-
-=======
->>>>>>> 606f914579918d70c82d112d3367e822dd7154f0
           <div className="space-y-4">
             <label htmlFor="gender" className="flex items-center gap-3 text-lg font-bold text-gray-800 mb-4">
               <div className="w-8 h-8 bg-gradient-to-br from-emerald-400 to-teal-500 rounded-lg flex items-center justify-center shadow-md">
@@ -176,69 +137,38 @@ export default function PatientForm({ onSubmit }: PatientFormProps) {
                 <option value="Female">Female</option>
               </select>
               <div className="absolute inset-y-0 right-0 flex items-center pr-6 pointer-events-none">
-<<<<<<< HEAD
-=======
                 <svg className="w-6 h-6 text-gray-400 group-hover:text-emerald-500 transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                 </svg>
->>>>>>> 606f914579918d70c82d112d3367e822dd7154f0
               </div>
               <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-emerald-500/5 to-teal-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
             </div>
           </div>
-<<<<<<< HEAD
-          
-          <div className="space-y-6">
-            <div className="flex items-center gap-3 text-lg font-bold text-gray-800 mb-6">
-=======
 
           <div className="space-y-6">
-            <label className="flex items-center gap-3 text-lg font-bold text-gray-800 mb-6">
->>>>>>> 606f914579918d70c82d112d3367e822dd7154f0
+            <div className="flex items-center gap-3 text-lg font-bold text-gray-800 mb-6">
               <div className="w-8 h-8 bg-gradient-to-br from-emerald-400 to-teal-500 rounded-lg flex items-center justify-center shadow-md">
                 <Sparkles className="w-4 h-4 text-white" />
               </div>
               Ayurvedic Prakriti (Constitution)
-<<<<<<< HEAD
             </div>
             
-            {/* ADD THIS HIDDEN INPUT TO STORE THE SELECTION */}
             <input type="hidden" name="prakriti" value={selectedPrakriti} />
 
             <div className="space-y-4">
               {prakritis.map((prakriti) => (
-                // CHANGED from <label> to <div> with an onClick
                 <div 
                   key={prakriti.value} 
                   className={`relative block cursor-pointer group`}
                   onClick={() => setSelectedPrakriti(prakriti.value)}
                 >
-                  {/* REMOVED the <input type="radio"> */}
                   <div className={
                     `relative overflow-hidden p-6 border-2 rounded-2xl transition-all duration-500 hover:border-emerald-300 hover:shadow-xl bg-gradient-to-br ${prakriti.bgColor} backdrop-blur-sm group-hover:scale-[1.02] ` +
-                    // This is the new conditional styling
                     (selectedPrakriti === prakriti.value 
                       ? 'border-emerald-400 shadow-2xl shadow-emerald-500/20' 
                       : `${prakriti.borderColor}`)
                   }>
-                    {/* The rest of the styling is the same, but without 'peer-checked' */}
                     <div className={`absolute inset-0 bg-gradient-to-r from-white/20 via-transparent to-white/10 transition-opacity duration-500 ${selectedPrakriti === prakriti.value ? 'opacity-100' : 'opacity-0'}`}></div>
-=======
-            </label>
-            
-            <div className="space-y-4">
-              {prakritis.map((prakriti) => (
-                <label key={prakriti.value} className="relative block cursor-pointer group">
-                  <input
-                    type="radio"
-                    name="prakriti"
-                    value={prakriti.value}
-                    required
-                    className="sr-only peer"
-                  />
-                  <div className={`relative overflow-hidden p-6 border-2 ${prakriti.borderColor} rounded-2xl transition-all duration-500 peer-checked:border-emerald-400 peer-checked:shadow-2xl peer-checked:shadow-emerald-500/20 hover:border-emerald-300 hover:shadow-xl bg-gradient-to-br ${prakriti.bgColor} backdrop-blur-sm group-hover:scale-[1.02]`}>
-                    <div className="absolute inset-0 bg-gradient-to-r from-white/20 via-transparent to-white/10 opacity-0 peer-checked:opacity-100 transition-opacity duration-500"></div>
->>>>>>> 606f914579918d70c82d112d3367e822dd7154f0
                     <div className={`absolute top-0 right-0 w-32 h-32 bg-gradient-to-br ${prakriti.color} opacity-5 rounded-full -translate-y-16 translate-x-16`}></div>
                     
                     <div className="relative flex items-start justify-between">
@@ -271,7 +201,6 @@ export default function PatientForm({ onSubmit }: PatientFormProps) {
                       </div>
                       
                       <div className="relative ml-4">
-<<<<<<< HEAD
                         <div className={`w-6 h-6 border-2 rounded-full flex items-center justify-center transition-all duration-300 shadow-sm ${selectedPrakriti === prakriti.value ? 'border-emerald-500 bg-emerald-500' : 'border-gray-300'}`}>
                           <div className={`w-2 h-2 bg-white rounded-full transition-opacity duration-300 ${selectedPrakriti === prakriti.value ? 'opacity-100' : 'opacity-0'}`}></div>
                         </div>
@@ -280,16 +209,6 @@ export default function PatientForm({ onSubmit }: PatientFormProps) {
                     </div>
                   </div>
                 </div>
-=======
-                        <div className="w-6 h-6 border-2 border-gray-300 rounded-full peer-checked:border-emerald-500 peer-checked:bg-emerald-500 flex items-center justify-center transition-all duration-300 shadow-sm">
-                          <div className="w-2 h-2 bg-white rounded-full opacity-0 peer-checked:opacity-100 transition-opacity duration-300"></div>
-                        </div>
-                        <div className="absolute inset-0 rounded-full bg-emerald-400 opacity-0 peer-checked:opacity-20 animate-ping"></div>
-                      </div>
-                    </div>
-                  </div>
-                </label>
->>>>>>> 606f914579918d70c82d112d3367e822dd7154f0
               ))}
             </div>
           </div>
