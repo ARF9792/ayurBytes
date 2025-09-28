@@ -1,8 +1,6 @@
-# ayurBytes: Ayurvedic Diet Planner (Proof of Concept)
+# AyurBytes: Ayurvedic Diet Planner (Proof of Concept)
 
-![ayurBytes Logo/Banner](https://github.com/ARF9792/ayurBytes/assets/your_github_username/your_image_id/image_name.png) 
-*Replace with a screenshot or a simple banner for your project if you have one.*
-
+(./1.png)
 ## 🌟 Introduction
 
 `ayurBytes` is a Proof of Concept (POC) for an Ayurvedic Diet Management Software. This initial application demonstrates the core functionality of generating a personalized Ayurvedic diet plan based on a user's `Prakriti` (body constitution), age, and other basic health parameters.
@@ -79,20 +77,4 @@ Follow these steps to set up and run the `ayurBytes` POC locally on your machine
 
 ## 📄 File Structure Overview
 
-ayurBytes/
-├── app/
-│   ├── api/                 # Next.js API routes (backend logic)
-│   │   └── generate-diet/
-│   │       └── route.ts     # Main API endpoint for diet generation
-│   ├── components/          # Reusable React components
-│   │   ├── DietChartDisplay.tsx
-│   │   └── PatientForm.tsx
-│   ├── globals.css          # Global Tailwind CSS styles
-│   └── page.tsx             # Main application page
-├── data/
-│   └── foods.json           # Mock food database with Ayurvedic properties
-├── public/                  # Static assets
-├── README.md                # This file
-├── package.json             # Project dependencies and scripts
-├── tsconfig.json            # TypeScript configuration
-└── tailwind.config.ts       # Tailwind CSS configuration
+
