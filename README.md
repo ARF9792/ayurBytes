@@ -52,7 +52,7 @@ Follow these steps to set up and run the `ayurBytes` POC locally on your machine
 
 1.  **Clone the repository:**
     ```bash
-    git clone [https://github.com/ARF9792/ayurBytes.git](https://github.com/ARF9792/ayurBytes.git)
+    git clone [https://github.com/ARF9792/ayurBytes.git]
     cd ayurBytes
     ```
 
