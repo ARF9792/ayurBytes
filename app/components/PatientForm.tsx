@@ -134,9 +134,6 @@ export default function PatientForm({ onSubmit }: PatientFormProps) {
                 <option value="Female">Female</option>
               </select>
               <div className="absolute inset-y-0 right-0 flex items-center pr-6 pointer-events-none">
-                <svg className="w-6 h-6 text-gray-400 group-hover:text-emerald-500 transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                </svg>
               </div>
               <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-emerald-500/5 to-teal-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
             </div>
