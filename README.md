@@ -1,6 +1,6 @@
 # AyurBytes: Ayurvedic Diet Planner (Proof of Concept)
 
-![AyurBytes App Screenshot](./1.png)
+![AyurBytes App Screenshot](./public/images/1.png)
 
 ## 🚀 Live Demo
 🔗 [Click here to visit AyurPOC](https://ayurpoc.vercel.app/)
