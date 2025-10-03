@@ -112,10 +112,22 @@ export function calculateNutritionalSummary(
     totalCalories += food.calories;
     
     if (food.nutrition) {
-      totalProtein += food.nutrition.macronutrients.protein;
-      totalCarbs += food.nutrition.macronutrients.carbohydrates;
-      totalFats += food.nutrition.macronutrients.fats;
-      totalFiber += food.nutrition.macronutrients.fiber;
+      // Handle both old (flat) and new (nested) nutrition structure
+      const nutrition = food.nutrition as any;
+      
+      if (nutrition.macronutrients) {
+        // New structure with macronutrients/micronutrients
+        totalProtein += nutrition.macronutrients.protein || 0;
+        totalCarbs += nutrition.macronutrients.carbohydrates || 0;
+        totalFats += nutrition.macronutrients.fats || 0;
+        totalFiber += nutrition.macronutrients.fiber || 0;
+      } else {
+        // Old flat structure (current foods.json format)
+        totalProtein += nutrition.protein || 0;
+        totalCarbs += nutrition.carbohydrates || 0;
+        totalFats += nutrition.fats || 0;
+        totalFiber += nutrition.fiber || 0;
+      }
     } else {
       // Estimate if nutrition data not available
       totalProtein += food.calories * 0.15 / 4;

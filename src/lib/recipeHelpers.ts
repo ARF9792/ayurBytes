@@ -49,28 +49,52 @@ export function calculateRecipeNutrition(
     // Calculate calories
     totalCalories += (food.calories || 0) * multiplier;
 
-    // Macronutrients
-    nutrition.macronutrients.protein += (food.nutrition.macronutrients.protein || 0) * multiplier;
-    nutrition.macronutrients.carbohydrates += (food.nutrition.macronutrients.carbohydrates || 0) * multiplier;
-    nutrition.macronutrients.fats += (food.nutrition.macronutrients.fats || 0) * multiplier;
-    nutrition.macronutrients.fiber += (food.nutrition.macronutrients.fiber || 0) * multiplier;
-    nutrition.macronutrients.sugar += (food.nutrition.macronutrients.sugar || 0) * multiplier;
+    // Handle both old (flat) and new (nested) nutrition structure
+    const foodNutrition = food.nutrition as any;
 
-    // Micronutrients - vitamins
-    if (food.nutrition.micronutrients?.vitamins) {
-      nutrition.micronutrients.vitamins.vitaminA += (food.nutrition.micronutrients.vitamins.vitaminA || 0) * multiplier;
-      nutrition.micronutrients.vitamins.vitaminC += (food.nutrition.micronutrients.vitamins.vitaminC || 0) * multiplier;
-      nutrition.micronutrients.vitamins.vitaminD += (food.nutrition.micronutrients.vitamins.vitaminD || 0) * multiplier;
-      nutrition.micronutrients.vitamins.vitaminB12 += (food.nutrition.micronutrients.vitamins.vitaminB12 || 0) * multiplier;
-    }
+    if (foodNutrition.macronutrients) {
+      // New structure
+      nutrition.macronutrients.protein += (foodNutrition.macronutrients.protein || 0) * multiplier;
+      nutrition.macronutrients.carbohydrates += (foodNutrition.macronutrients.carbohydrates || 0) * multiplier;
+      nutrition.macronutrients.fats += (foodNutrition.macronutrients.fats || 0) * multiplier;
+      nutrition.macronutrients.fiber += (foodNutrition.macronutrients.fiber || 0) * multiplier;
+      nutrition.macronutrients.sugar += (foodNutrition.macronutrients.sugar || 0) * multiplier;
 
-    // Micronutrients - minerals
-    if (food.nutrition.micronutrients?.minerals) {
-      nutrition.micronutrients.minerals.calcium += (food.nutrition.micronutrients.minerals.calcium || 0) * multiplier;
-      nutrition.micronutrients.minerals.iron += (food.nutrition.micronutrients.minerals.iron || 0) * multiplier;
-      nutrition.micronutrients.minerals.magnesium += (food.nutrition.micronutrients.minerals.magnesium || 0) * multiplier;
-      nutrition.micronutrients.minerals.potassium += (food.nutrition.micronutrients.minerals.potassium || 0) * multiplier;
-      nutrition.micronutrients.minerals.zinc += (food.nutrition.micronutrients.minerals.zinc || 0) * multiplier;
+      // Micronutrients - vitamins
+      if (foodNutrition.micronutrients?.vitamins) {
+        nutrition.micronutrients.vitamins.vitaminA += (foodNutrition.micronutrients.vitamins.vitaminA || 0) * multiplier;
+        nutrition.micronutrients.vitamins.vitaminC += (foodNutrition.micronutrients.vitamins.vitaminC || 0) * multiplier;
+        nutrition.micronutrients.vitamins.vitaminD += (foodNutrition.micronutrients.vitamins.vitaminD || 0) * multiplier;
+        nutrition.micronutrients.vitamins.vitaminB12 += (foodNutrition.micronutrients.vitamins.vitaminB12 || 0) * multiplier;
+      }
+
+      // Micronutrients - minerals
+      if (foodNutrition.micronutrients?.minerals) {
+        nutrition.micronutrients.minerals.calcium += (foodNutrition.micronutrients.minerals.calcium || 0) * multiplier;
+        nutrition.micronutrients.minerals.iron += (foodNutrition.micronutrients.minerals.iron || 0) * multiplier;
+        nutrition.micronutrients.minerals.magnesium += (foodNutrition.micronutrients.minerals.magnesium || 0) * multiplier;
+        nutrition.micronutrients.minerals.potassium += (foodNutrition.micronutrients.minerals.potassium || 0) * multiplier;
+        nutrition.micronutrients.minerals.zinc += (foodNutrition.micronutrients.minerals.zinc || 0) * multiplier;
+      }
+    } else {
+      // Old flat structure (current foods.json format)
+      nutrition.macronutrients.protein += (foodNutrition.protein || 0) * multiplier;
+      nutrition.macronutrients.carbohydrates += (foodNutrition.carbohydrates || 0) * multiplier;
+      nutrition.macronutrients.fats += (foodNutrition.fats || 0) * multiplier;
+      nutrition.macronutrients.fiber += (foodNutrition.fiber || 0) * multiplier;
+      nutrition.macronutrients.sugar += (foodNutrition.sugar || 0) * multiplier;
+
+      // Old structure vitamins/minerals (flat)
+      nutrition.micronutrients.vitamins.vitaminA += (foodNutrition.vitaminA || 0) * multiplier;
+      nutrition.micronutrients.vitamins.vitaminC += (foodNutrition.vitaminC || 0) * multiplier;
+      nutrition.micronutrients.vitamins.vitaminD += (foodNutrition.vitaminD || 0) * multiplier;
+      nutrition.micronutrients.vitamins.vitaminB12 += (foodNutrition.vitaminB12 || 0) * multiplier;
+      
+      nutrition.micronutrients.minerals.calcium += (foodNutrition.calcium || 0) * multiplier;
+      nutrition.micronutrients.minerals.iron += (foodNutrition.iron || 0) * multiplier;
+      nutrition.micronutrients.minerals.magnesium += (foodNutrition.magnesium || 0) * multiplier;
+      nutrition.micronutrients.minerals.potassium += (foodNutrition.potassium || 0) * multiplier;
+      nutrition.micronutrients.minerals.zinc += (foodNutrition.zinc || 0) * multiplier;
     }
   });
 
