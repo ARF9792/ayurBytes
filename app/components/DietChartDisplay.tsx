@@ -1,16 +1,44 @@
 'use client';
 
-import { Utensils, Sun, Moon, Flame, Snowflake, Zap, Star, Heart, Leaf, Clock, BookOpen } from 'lucide-react';
+import { Utensils, Sun, Moon, Flame, Snowflake, Zap, Star, Heart, Leaf, Clock, BookOpen, Download, Share2, Printer } from 'lucide-react';
 import { useTranslation } from '@/src/contexts/TranslationContext';
-import { Food, DietPlan } from '@/src/types';
+import { Food, DietPlan, PatientProfile, NutritionalSummary as NutritionalSummaryType } from '@/src/types';
 import NutritionalSummary from './NutritionalSummary';
+import { downloadDietPlanPDF, shareDietPlanPDF } from '@/src/lib/pdfExport';
+import { useState } from 'react';
 
 interface DietChartDisplayProps {
   dietPlan: DietPlan | null;
+  patientProfile?: PatientProfile;
+  nutritionalSummary?: NutritionalSummaryType;
 }
 
-export default function DietChartDisplay({ dietPlan }: DietChartDisplayProps) {
+export default function DietChartDisplay({ dietPlan, patientProfile, nutritionalSummary }: DietChartDisplayProps) {
   const { t } = useTranslation();
+  const [isSharing, setIsSharing] = useState(false);
+  
+  const handleDownloadPDF = () => {
+    if (dietPlan) {
+      downloadDietPlanPDF(dietPlan, patientProfile, nutritionalSummary);
+    }
+  };
+
+  const handleSharePDF = async () => {
+    if (dietPlan) {
+      setIsSharing(true);
+      const success = await shareDietPlanPDF(dietPlan, patientProfile, nutritionalSummary);
+      setIsSharing(false);
+      
+      if (!success) {
+        // Fallback to download if sharing not supported
+        handleDownloadPDF();
+      }
+    }
+  };
+
+  const handlePrint = () => {
+    window.print();
+  };
   
   if (!dietPlan) {
     return (
@@ -206,6 +234,32 @@ export default function DietChartDisplay({ dietPlan }: DietChartDisplayProps) {
 
   return (
     <div className="space-y-8">
+      {/* Export Actions */}
+      <div className="flex flex-wrap gap-3 justify-end print:hidden">
+        <button
+          onClick={handlePrint}
+          className="flex items-center gap-2 px-4 py-2 bg-gray-100 hover:bg-gray-200 text-gray-700 rounded-lg transition-colors duration-200 shadow-sm hover:shadow-md"
+        >
+          <Printer className="w-4 h-4" />
+          Print
+        </button>
+        <button
+          onClick={handleSharePDF}
+          disabled={isSharing}
+          className="flex items-center gap-2 px-4 py-2 bg-blue-500 hover:bg-blue-600 text-white rounded-lg transition-colors duration-200 shadow-sm hover:shadow-md disabled:opacity-50 disabled:cursor-not-allowed"
+        >
+          <Share2 className="w-4 h-4" />
+          {isSharing ? 'Sharing...' : 'Share PDF'}
+        </button>
+        <button
+          onClick={handleDownloadPDF}
+          className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 text-white rounded-lg transition-all duration-200 shadow-md hover:shadow-lg"
+        >
+          <Download className="w-4 h-4" />
+          Download PDF
+        </button>
+      </div>
+
       {/* Nutritional Summary */}
       {dietPlan.nutritionalSummary && (
         <NutritionalSummary 

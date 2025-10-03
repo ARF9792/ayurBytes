@@ -29,7 +29,7 @@ export async function POST(request: NextRequest) {
     const ageGroup = getAgeGroup(age);
 
     // Filter foods based on prakriti and age group
-    const prakritiFiltered = filterFoodsByPrakriti(foods as Food[], prakriti as PrakritiType);
+    const prakritiFiltered = filterFoodsByPrakriti(foods as unknown as Food[], prakriti as PrakritiType);
     const filteredFoods = filterFoodsByAgeGroup(prakritiFiltered, ageGroup);
 
     // Create diet plan

@@ -12,7 +12,7 @@ import * as path from 'path';
 
 // Load the data
 const recipes: Recipe[] = recipesData as Recipe[];
-const foods: Food[] = foodsData as Food[];
+const foods: Food[] = foodsData as unknown as Food[];
 
 // Process each recipe
 const processedRecipes = recipes.map(recipe => {

@@ -170,7 +170,11 @@ export default function Home() {
           </div>
         )}
 
-        <DietChartDisplay dietPlan={dietPlan} />
+        <DietChartDisplay 
+          dietPlan={dietPlan} 
+          patientProfile={patientProfile || undefined} 
+          nutritionalSummary={dietPlan?.nutritionalSummary}
+        />
 
         <footer className="text-center text-gray-500 text-sm py-8">
             {t('app.footer')}
