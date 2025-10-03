@@ -1,24 +1,49 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import PatientForm from './components/PatientForm';
+import ComprehensivePatientForm from './components/ComprehensivePatientForm';
 import DietChartDisplay from './components/DietChartDisplay';
 import LanguageSelector from './components/LanguageSelector';
 import { useTranslation } from '@/src/contexts/TranslationContext';
-import { PatientFormData, DietPlan } from '@/src/types';
+import { PatientFormData, PatientProfile, DietPlan } from '@/src/types';
 import { API_ENDPOINTS } from '@/src/constants';
+import { FileText, UserCircle } from 'lucide-react';
 
 export default function Home() {
   const { t } = useTranslation();
+  const [useComprehensiveForm, setUseComprehensiveForm] = useState(false);
+  
   // State to hold the generated diet plan
   const [dietPlan, setDietPlan] = useState<DietPlan | null>(null);
   // State to manage loading UI
   const [isLoading, setIsLoading] = useState(false);
   // State to handle potential errors
   const [error, setError] = useState<string | null>(null);
+  // State to hold patient profile
+  const [patientProfile, setPatientProfile] = useState<PatientProfile | null>(null);
 
-  // This function will be called when the form is submitted
-  const handleFormSubmit = async (data: PatientFormData) => {
+  // Load patient profile from localStorage on mount
+  useEffect(() => {
+    const saved = localStorage.getItem('patientProfile');
+    if (saved) {
+      try {
+        const profile = JSON.parse(saved);
+        setPatientProfile(profile);
+      } catch (e) {
+        console.error('Failed to load patient profile', e);
+      }
+    }
+  }, []);
+
+  // Save patient profile to localStorage
+  const savePatientProfile = (profile: PatientProfile) => {
+    setPatientProfile(profile);
+    localStorage.setItem('patientProfile', JSON.stringify(profile));
+  };
+
+  // This function will be called when the basic form is submitted
+  const handleBasicFormSubmit = async (data: PatientFormData) => {
     setIsLoading(true);
     setError(null);
     setDietPlan(null); // Clear previous results
@@ -46,6 +71,43 @@ export default function Home() {
     }
   };
 
+  // This function will be called when the comprehensive form is submitted
+  const handleComprehensiveFormSubmit = async (profile: PatientProfile) => {
+    savePatientProfile(profile);
+    
+    setIsLoading(true);
+    setError(null);
+    setDietPlan(null);
+
+    try {
+      const response = await fetch(API_ENDPOINTS.GENERATE_DIET, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ 
+          age: profile.age, 
+          prakriti: profile.prakriti,
+          profile: profile // Send full profile for advanced diet generation
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to generate diet plan. Please try again.');
+      }
+
+      const result: DietPlan = await response.json();
+      // Add patient profile to diet plan
+      result.patientProfile = profile;
+      setDietPlan(result);
+
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'An unknown error occurred.');
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
   return (
     <main className="flex min-h-screen flex-col items-center justify-start p-4 sm:p-8 md:p-12 bg-gradient-to-br from-emerald-50 via-teal-50 to-cyan-50">
       <div className="w-full max-w-4xl mx-auto space-y-12">
@@ -63,8 +125,38 @@ export default function Home() {
               {t('app.subtitle')}
             </p>
         </div>
+
+        {/* Form Type Toggle */}
+        <div className="flex justify-center gap-4">
+          <button
+            onClick={() => setUseComprehensiveForm(false)}
+            className={`flex items-center gap-2 px-6 py-3 rounded-xl font-semibold transition-all duration-300 ${
+              !useComprehensiveForm
+                ? 'bg-gradient-to-r from-emerald-500 to-teal-500 text-white shadow-lg'
+                : 'bg-white text-gray-600 border-2 border-gray-200 hover:border-emerald-300'
+            }`}
+          >
+            <FileText className="w-5 h-5" />
+            Quick Form
+          </button>
+          <button
+            onClick={() => setUseComprehensiveForm(true)}
+            className={`flex items-center gap-2 px-6 py-3 rounded-xl font-semibold transition-all duration-300 ${
+              useComprehensiveForm
+                ? 'bg-gradient-to-r from-emerald-500 to-teal-500 text-white shadow-lg'
+                : 'bg-white text-gray-600 border-2 border-gray-200 hover:border-emerald-300'
+            }`}
+          >
+            <UserCircle className="w-5 h-5" />
+            Comprehensive Assessment
+          </button>
+        </div>
         
-        <PatientForm onSubmit={handleFormSubmit} />
+        {useComprehensiveForm ? (
+          <ComprehensivePatientForm onSubmit={handleComprehensiveFormSubmit} />
+        ) : (
+          <PatientForm onSubmit={handleBasicFormSubmit} />
+        )}
 
         {isLoading && (
           <div className="text-center p-8 text-lg font-semibold text-emerald-700">

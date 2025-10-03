@@ -13,11 +13,37 @@ The goal of this POC is to showcase the feasibility and potential of integrating
 
 ## ✨ Features (Current POC)
 
-* **Prakriti-Based Diet Generation:** Input your Ayurvedic Prakriti (Vata, Pitta, Kapha) to receive tailored meal suggestions.
-* **Age-Group Customization:** Diet plans are adapted for different age groups (Child, Adult, Elderly).
-* **Simple Input Form:** User-friendly interface to input essential patient details.
-* **Basic Meal Plan Display:** Presents a generated plan for Breakfast, Lunch, and Dinner.
-* **Modern UI:** Built with Next.js and Tailwind CSS for a responsive and aesthetically pleasing experience.
+* **Comprehensive Patient Management:** Detailed health profiling with 11+ parameters including:
+  - Physical measurements (Height, Weight, Auto-calculated BMI)
+  - Medical conditions and allergies tracking
+  - Dietary habits and meal frequency
+  - Lifestyle factors (Activity level, sleep, stress)
+  - Ayurvedic assessment (Bowel movements, digestion quality)
+  - Patient data persistence (localStorage)
+
+* **Advanced Nutritional Analysis:** Scientific calculations including:
+  - Daily caloric requirements (Mifflin-St Jeor Equation)
+  - Macro nutrients tracking (Protein, Carbs, Fats, Fiber)
+  - Micro nutrients structure (Vitamins, Minerals)
+  - Progress tracking with visual indicators
+  - Percentage of daily requirements met
+
+* **Ayurvedic Intelligence:**
+  - Prakriti-Based Diet Generation (Vata, Pitta, Kapha)
+  - Six Tastes (Rasa) balance visualization
+  - Personalized Ayurvedic guidelines based on health profile
+  - Meal timing recommendations aligned with digestive fire (Agni)
+
+* **Age-Group Customization:** Diet plans adapted for different age groups (Child, Adult, Elderly)
+
+* **Multilingual Support:** Available in 7 Indian languages:
+  - English, Hindi, Bengali, Telugu, Marathi, Tamil, Sanskrit
+
+* **Dual Form System:**
+  - Quick Form: Basic prakriti assessment
+  - Comprehensive Assessment: Full patient profiling
+
+* **Modern UI:** Built with Next.js 15, TypeScript, and Tailwind CSS for a responsive and aesthetically pleasing experience
 
 ## 🚀 Technologies Used
 

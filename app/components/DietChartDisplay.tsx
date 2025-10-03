@@ -1,8 +1,9 @@
 'use client';
 
-import { Utensils, Sun, Moon, Flame, Snowflake, Zap, Star, Heart, Leaf } from 'lucide-react';
+import { Utensils, Sun, Moon, Flame, Snowflake, Zap, Star, Heart, Leaf, Clock, BookOpen } from 'lucide-react';
 import { useTranslation } from '@/src/contexts/TranslationContext';
 import { Food, DietPlan } from '@/src/types';
+import NutritionalSummary from './NutritionalSummary';
 
 interface DietChartDisplayProps {
   dietPlan: DietPlan | null;
@@ -204,7 +205,73 @@ export default function DietChartDisplay({ dietPlan }: DietChartDisplayProps) {
   };
 
   return (
-    <div className="relative overflow-hidden bg-gradient-to-br from-white via-emerald-50/30 to-teal-50/50 rounded-3xl shadow-2xl border border-emerald-100/50 backdrop-blur-sm">
+    <div className="space-y-8">
+      {/* Nutritional Summary */}
+      {dietPlan.nutritionalSummary && (
+        <NutritionalSummary 
+          summary={dietPlan.nutritionalSummary} 
+          profile={dietPlan.patientProfile}
+        />
+      )}
+
+      {/* Ayurvedic Guidelines */}
+      {dietPlan.guidelines && dietPlan.guidelines.length > 0 && (
+        <div className="relative overflow-hidden bg-gradient-to-br from-white via-amber-50/30 to-orange-50/50 rounded-3xl shadow-2xl border border-amber-100/50 backdrop-blur-sm">
+          <div className="absolute inset-0 bg-gradient-to-br from-amber-500/5 via-transparent to-orange-500/5"></div>
+          <div className="relative p-8">
+            <div className="flex items-center gap-3 mb-6">
+              <div className="w-12 h-12 bg-gradient-to-br from-amber-400 to-orange-500 rounded-xl flex items-center justify-center shadow-lg">
+                <BookOpen className="w-6 h-6 text-white" />
+              </div>
+              <h3 className="text-2xl font-bold text-gray-800">Ayurvedic Guidelines</h3>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              {dietPlan.guidelines.map((guideline, index) => (
+                <div key={index} className="flex items-start gap-3 p-4 bg-white/60 rounded-xl border border-amber-200/50">
+                  <div className="w-6 h-6 bg-gradient-to-br from-amber-400 to-orange-400 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <span className="text-white text-xs font-bold">{index + 1}</span>
+                  </div>
+                  <p className="text-gray-700 text-sm leading-relaxed">{guideline}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Meal Timings */}
+      {dietPlan.mealTimings && dietPlan.mealTimings.length > 0 && (
+        <div className="relative overflow-hidden bg-gradient-to-br from-white via-indigo-50/30 to-blue-50/50 rounded-3xl shadow-2xl border border-indigo-100/50 backdrop-blur-sm">
+          <div className="absolute inset-0 bg-gradient-to-br from-indigo-500/5 via-transparent to-blue-500/5"></div>
+          <div className="relative p-8">
+            <div className="flex items-center gap-3 mb-6">
+              <div className="w-12 h-12 bg-gradient-to-br from-indigo-400 to-blue-500 rounded-xl flex items-center justify-center shadow-lg">
+                <Clock className="w-6 h-6 text-white" />
+              </div>
+              <h3 className="text-2xl font-bold text-gray-800">Recommended Meal Timings</h3>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {dietPlan.mealTimings.map((timing, index) => (
+                <div key={index} className="bg-white/60 backdrop-blur-sm rounded-2xl p-6 border border-indigo-200/50 shadow-lg">
+                  <div className="text-center mb-4">
+                    <div className="w-16 h-16 mx-auto mb-3 bg-gradient-to-br from-indigo-400 to-blue-500 rounded-full flex items-center justify-center shadow-md">
+                      {timing.meal === 'breakfast' && <Sun className="w-8 h-8 text-white" />}
+                      {timing.meal === 'lunch' && <Utensils className="w-8 h-8 text-white" />}
+                      {timing.meal === 'dinner' && <Moon className="w-8 h-8 text-white" />}
+                    </div>
+                    <h4 className="text-lg font-bold text-gray-800 capitalize mb-2">{timing.meal}</h4>
+                    <div className="text-2xl font-bold text-indigo-600 mb-2">{timing.recommendedTime}</div>
+                  </div>
+                  <p className="text-sm text-gray-600 text-center leading-relaxed">{timing.description}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Diet Plan */}
+      <div className="relative overflow-hidden bg-gradient-to-br from-white via-emerald-50/30 to-teal-50/50 rounded-3xl shadow-2xl border border-emerald-100/50 backdrop-blur-sm">
       <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/5 via-transparent to-teal-500/5"></div>
       <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-emerald-200/10 to-teal-200/10 rounded-full -translate-y-32 translate-x-32"></div>
       
@@ -245,6 +312,7 @@ export default function DietChartDisplay({ dietPlan }: DietChartDisplayProps) {
           </div>
         )}
       </div>
+    </div>
     </div>
   );
 }
