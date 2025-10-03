@@ -1,0 +1,491 @@
+[
+  {
+    "id": 1,
+    "name": "Moong Dal Khichdi",
+    "nameSanskrit": "मूंग दाल खिचड़ी",
+    "nameHindi": "मूंग दाल खिचड़ी",
+    "description": "Traditional Ayurvedic one-pot meal combining rice and moong dal, known for its easy digestibility and balancing properties",
+    "category": "Main Course",
+    "servings": 4,
+    "prepTime": 10,
+    "cookTime": 25,
+    "totalTime": 35,
+    "difficulty": "Easy",
+    "ingredients": [
+      {
+        "foodId": 1,
+        "foodName": "Basmati Rice",
+        "quantity": 200,
+        "unit": "g"
+      },
+      {
+        "foodId": 16,
+        "foodName": "Moong Dal (Yellow)",
+        "quantity": 100,
+        "unit": "g"
+      },
+      {
+        "foodId": 46,
+        "foodName": "Ghee",
+        "quantity": 2,
+        "unit": "tbsp"
+      },
+      {
+        "foodId": 47,
+        "foodName": "Cumin Seeds",
+        "quantity": 1,
+        "unit": "tsp"
+      },
+      {
+        "foodId": 48,
+        "foodName": "Turmeric",
+        "quantity": 0.5,
+        "unit": "tsp"
+      },
+      {
+        "foodId": 49,
+        "foodName": "Ginger",
+        "quantity": 1,
+        "unit": "tbsp"
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Wash rice and moong dal together until water runs clear. Soak for 10 minutes.",
+        "duration": 10
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Heat ghee in a pressure cooker. Add cumin seeds and let them crackle.",
+        "duration": 2
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Add grated ginger and turmeric. Sauté for 30 seconds.",
+        "duration": 1
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Add drained rice and dal. Sauté for 2 minutes.",
+        "duration": 2
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Add 4 cups water and salt. Pressure cook for 3 whistles.",
+        "duration": 15
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Let pressure release naturally. Serve hot with ghee on top.",
+        "duration": 5
+      }
+    ],
+    "nutrition": {},
+    "totalCalories": 0,
+    "suitableFor": ["All"],
+    "bestForPrakriti": ["Vata", "Pitta", "Kapha"],
+    "bestSeasons": ["All"],
+    "mealType": ["lunch", "dinner"],
+    "region": "Pan-Indian",
+    "tags": ["comfort food", "easy to digest", "sattvic", "one-pot meal", "gluten-free"],
+    "healthBenefits": [
+      "Easy to digest",
+      "Balances all three doshas",
+      "Good for recovery from illness",
+      "Rich in protein and fiber",
+      "Calming effect on digestive system"
+    ],
+    "ayurvedicNotes": "Considered the most balancing meal in Ayurveda. Ideal for detox, recovery, and daily consumption. Can be eaten during all seasons."
+  },
+  {
+    "id": 2,
+    "name": "Dal Tadka",
+    "nameSanskrit": "दाल तड़का",
+    "nameHindi": "दाल तड़का",
+    "description": "Classic Indian lentil soup tempered with aromatic spices",
+    "category": "Main Course",
+    "servings": 4,
+    "prepTime": 15,
+    "cookTime": 30,
+    "totalTime": 45,
+    "difficulty": "Easy",
+    "ingredients": [
+      {
+        "foodId": 18,
+        "foodName": "Toor Dal (Pigeon Pea)",
+        "quantity": 200,
+        "unit": "g"
+      },
+      {
+        "foodId": 46,
+        "foodName": "Ghee",
+        "quantity": 2,
+        "unit": "tbsp"
+      },
+      {
+        "foodId": 47,
+        "foodName": "Cumin Seeds",
+        "quantity": 1,
+        "unit": "tsp"
+      },
+      {
+        "foodId": 48,
+        "foodName": "Turmeric",
+        "quantity": 0.5,
+        "unit": "tsp"
+      },
+      {
+        "foodId": 49,
+        "foodName": "Ginger",
+        "quantity": 1,
+        "unit": "tbsp"
+      },
+      {
+        "foodId": 24,
+        "foodName": "Tomato",
+        "quantity": 100,
+        "unit": "g"
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Pressure cook toor dal with turmeric and water until soft (3-4 whistles).",
+        "duration": 20
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Mash the cooked dal lightly and add salt to taste.",
+        "duration": 2
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Heat ghee in a pan. Add cumin seeds and let them splutter.",
+        "duration": 2
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Add ginger and chopped tomatoes. Cook until tomatoes soften.",
+        "duration": 5
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Pour the tadka (tempering) over the dal and mix well.",
+        "duration": 1
+      }
+    ],
+    "nutrition": {},
+    "totalCalories": 0,
+    "suitableFor": ["All"],
+    "bestForPrakriti": ["Vata", "Pitta"],
+    "bestSeasons": ["Winter", "Monsoon"],
+    "mealType": ["lunch", "dinner"],
+    "region": "North Indian",
+    "tags": ["protein-rich", "comfort food", "vegetarian"],
+    "healthBenefits": [
+      "High in protein",
+      "Rich in iron and folate",
+      "Good for digestion",
+      "Heart-healthy"
+    ],
+    "ayurvedicNotes": "Best consumed with rice. The ghee tempering aids digestion and nutrient absorption."
+  },
+  {
+    "id": 3,
+    "name": "Palak Paneer",
+    "nameSanskrit": "पालक पनीर",
+    "nameHindi": "पालक पनीर",
+    "description": "Creamy spinach curry with cottage cheese cubes",
+    "category": "Main Course",
+    "servings": 4,
+    "prepTime": 15,
+    "cookTime": 25,
+    "totalTime": 40,
+    "difficulty": "Medium",
+    "ingredients": [
+      {
+        "foodId": 28,
+        "foodName": "Spinach (Palak)",
+        "quantity": 500,
+        "unit": "g"
+      },
+      {
+        "foodId": 39,
+        "foodName": "Paneer",
+        "quantity": 200,
+        "unit": "g"
+      },
+      {
+        "foodId": 24,
+        "foodName": "Tomato",
+        "quantity": 100,
+        "unit": "g"
+      },
+      {
+        "foodId": 23,
+        "foodName": "Onion",
+        "quantity": 100,
+        "unit": "g"
+      },
+      {
+        "foodId": 46,
+        "foodName": "Ghee",
+        "quantity": 2,
+        "unit": "tbsp"
+      },
+      {
+        "foodId": 47,
+        "foodName": "Cumin Seeds",
+        "quantity": 1,
+        "unit": "tsp"
+      },
+      {
+        "foodId": 49,
+        "foodName": "Ginger",
+        "quantity": 1,
+        "unit": "tbsp"
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Blanch spinach in boiling water for 2 minutes. Cool and blend to smooth paste.",
+        "duration": 5
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Cut paneer into cubes. Lightly fry in ghee until golden. Set aside.",
+        "duration": 5
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "In the same pan, add cumin seeds. Add chopped onions and sauté until golden.",
+        "duration": 5
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Add ginger and tomatoes. Cook until tomatoes are soft and oil separates.",
+        "duration": 5
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Add spinach puree and cook for 5 minutes. Add salt and spices.",
+        "duration": 5
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Add fried paneer cubes. Simmer for 2-3 minutes. Serve hot.",
+        "duration": 3
+      }
+    ],
+    "nutrition": {},
+    "totalCalories": 0,
+    "suitableFor": ["All"],
+    "bestForPrakriti": ["Pitta", "Kapha"],
+    "bestSeasons": ["Winter"],
+    "mealType": ["lunch", "dinner"],
+    "region": "North Indian",
+    "tags": ["protein-rich", "iron-rich", "calcium-rich", "vegetarian"],
+    "healthBenefits": [
+      "High in iron and calcium",
+      "Rich in protein",
+      "Good for bone health",
+      "Boosts immunity",
+      "Good for eye health"
+    ],
+    "ayurvedicNotes": "Spinach is cooling in nature. Paneer provides grounding qualities. Best for Pitta dosha."
+  },
+  {
+    "id": 4,
+    "name": "Vegetable Upma",
+    "nameSanskrit": "उपमा",
+    "nameHindi": "उपमा",
+    "description": "South Indian savory breakfast made with semolina and vegetables",
+    "category": "Breakfast",
+    "servings": 4,
+    "prepTime": 10,
+    "cookTime": 15,
+    "totalTime": 25,
+    "difficulty": "Easy",
+    "ingredients": [
+      {
+        "foodId": 4,
+        "foodName": "Semolina (Rava/Suji)",
+        "quantity": 200,
+        "unit": "g"
+      },
+      {
+        "foodId": 22,
+        "foodName": "Carrot",
+        "quantity": 50,
+        "unit": "g"
+      },
+      {
+        "foodId": 27,
+        "foodName": "Green Peas",
+        "quantity": 50,
+        "unit": "g"
+      },
+      {
+        "foodId": 46,
+        "foodName": "Ghee",
+        "quantity": 2,
+        "unit": "tbsp"
+      },
+      {
+        "foodId": 47,
+        "foodName": "Cumin Seeds",
+        "quantity": 1,
+        "unit": "tsp"
+      },
+      {
+        "foodId": 49,
+        "foodName": "Ginger",
+        "quantity": 1,
+        "unit": "tbsp"
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Dry roast semolina in a pan until fragrant. Set aside.",
+        "duration": 3
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Heat ghee, add cumin seeds. Add ginger and vegetables.",
+        "duration": 3
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Sauté vegetables for 3-4 minutes.",
+        "duration": 4
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Add 4 cups water and bring to boil. Add salt.",
+        "duration": 3
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Slowly add roasted semolina while stirring continuously to avoid lumps.",
+        "duration": 5
+      },
+      {
+        "stepNumber": 6,
+        "instruction": "Cook on low heat for 2-3 minutes. Garnish and serve hot.",
+        "duration": 3
+      }
+    ],
+    "nutrition": {},
+    "totalCalories": 0,
+    "suitableFor": ["All"],
+    "bestForPrakriti": ["Vata", "Kapha"],
+    "bestSeasons": ["Winter", "Monsoon"],
+    "mealType": ["breakfast"],
+    "region": "South Indian",
+    "tags": ["breakfast", "quick", "light", "vegetarian"],
+    "healthBenefits": [
+      "Good source of energy",
+      "Easy to digest",
+      "Rich in vitamins from vegetables",
+      "Low in fat"
+    ],
+    "ayurvedicNotes": "Light and energizing breakfast. The ghee tempering aids digestion. Good for starting the day."
+  },
+  {
+    "id": 5,
+    "name": "Chana Masala",
+    "nameSanskrit": "छोले",
+    "nameHindi": "छोले मसाला",
+    "description": "Spicy chickpea curry popular in North India",
+    "category": "Main Course",
+    "servings": 4,
+    "prepTime": 480,
+    "cookTime": 30,
+    "totalTime": 510,
+    "difficulty": "Easy",
+    "ingredients": [
+      {
+        "foodId": 15,
+        "foodName": "Chickpeas (Chana)",
+        "quantity": 200,
+        "unit": "g"
+      },
+      {
+        "foodId": 24,
+        "foodName": "Tomato",
+        "quantity": 150,
+        "unit": "g"
+      },
+      {
+        "foodId": 23,
+        "foodName": "Onion",
+        "quantity": 100,
+        "unit": "g"
+      },
+      {
+        "foodId": 46,
+        "foodName": "Ghee",
+        "quantity": 2,
+        "unit": "tbsp"
+      },
+      {
+        "foodId": 47,
+        "foodName": "Cumin Seeds",
+        "quantity": 1,
+        "unit": "tsp"
+      },
+      {
+        "foodId": 49,
+        "foodName": "Ginger",
+        "quantity": 1,
+        "unit": "tbsp"
+      }
+    ],
+    "steps": [
+      {
+        "stepNumber": 1,
+        "instruction": "Soak chickpeas overnight (8 hours). Pressure cook until soft.",
+        "duration": 490
+      },
+      {
+        "stepNumber": 2,
+        "instruction": "Heat ghee, add cumin seeds. Add onions and sauté until golden.",
+        "duration": 5
+      },
+      {
+        "stepNumber": 3,
+        "instruction": "Add ginger and tomatoes. Cook until tomatoes are mushy.",
+        "duration": 5
+      },
+      {
+        "stepNumber": 4,
+        "instruction": "Add cooked chickpeas with some water. Add spices and salt.",
+        "duration": 3
+      },
+      {
+        "stepNumber": 5,
+        "instruction": "Simmer for 10-15 minutes until gravy thickens.",
+        "duration": 15
+      }
+    ],
+    "nutrition": {},
+    "totalCalories": 0,
+    "suitableFor": ["All"],
+    "bestForPrakriti": ["Vata", "Kapha"],
+    "bestSeasons": ["Winter"],
+    "mealType": ["lunch", "dinner"],
+    "region": "North Indian",
+    "tags": ["protein-rich", "fiber-rich", "vegan", "hearty"],
+    "healthBenefits": [
+      "Excellent source of plant protein",
+      "High in fiber",
+      "Good for diabetes management",
+      "Heart-healthy",
+      "Rich in iron and folate"
+    ],
+    "ayurvedicNotes": "Chickpeas are heavy to digest. Best consumed during lunch. Cumin and ginger aid digestion."
+  }
+]

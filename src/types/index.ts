@@ -138,28 +138,34 @@ export type FoodCategory = 'Grain' | 'Lentil' | 'Protein' | 'Vegetable' | 'Fruit
 export type Season = 'Summer' | 'Winter' | 'Monsoon' | 'Spring' | 'Autumn' | 'All';
 
 /**
- * Nutritional information structure
+ * Nutritional information structure - Enhanced with macro/micro split
  */
 export interface NutritionalInfo {
-  calories: number;
-  protein: number; // grams
-  carbohydrates: number; // grams
-  fats: number; // grams
-  fiber: number; // grams
-  sugar?: number; // grams
+  macronutrients: {
+    protein: number; // grams
+    carbohydrates: number; // grams
+    fats: number; // grams
+    fiber: number; // grams
+    sugar: number; // grams
+  };
   
-  // Micronutrients (optional, in mg unless specified)
-  vitaminA?: number; // mcg
-  vitaminC?: number; // mg
-  vitaminD?: number; // mcg
-  vitaminB12?: number; // mcg
-  calcium?: number; // mg
-  iron?: number; // mg
-  magnesium?: number; // mg
-  potassium?: number; // mg
-  zinc?: number; // mg
+  micronutrients: {
+    vitamins: {
+      vitaminA: number; // mcg
+      vitaminC: number; // mg
+      vitaminD: number; // mcg
+      vitaminB12: number; // mcg
+    };
+    minerals: {
+      calcium: number; // mg
+      iron: number; // mg
+      magnesium: number; // mg
+      potassium: number; // mg
+      zinc: number; // mg
+    };
+  };
   
-  // Additional metrics
+  // Additional metrics (optional)
   glycemicIndex?: number;
   cholesterol?: number; // mg
   sodium?: number; // mg
@@ -247,3 +253,6 @@ export interface ApiError {
   error: string;
   message?: string;
 }
+
+// Re-export recipe types
+export * from './recipe';

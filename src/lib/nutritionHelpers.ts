@@ -112,10 +112,10 @@ export function calculateNutritionalSummary(
     totalCalories += food.calories;
     
     if (food.nutrition) {
-      totalProtein += food.nutrition.protein;
-      totalCarbs += food.nutrition.carbohydrates;
-      totalFats += food.nutrition.fats;
-      totalFiber += food.nutrition.fiber;
+      totalProtein += food.nutrition.macronutrients.protein;
+      totalCarbs += food.nutrition.macronutrients.carbohydrates;
+      totalFats += food.nutrition.macronutrients.fats;
+      totalFiber += food.nutrition.macronutrients.fiber;
     } else {
       // Estimate if nutrition data not available
       totalProtein += food.calories * 0.15 / 4;
