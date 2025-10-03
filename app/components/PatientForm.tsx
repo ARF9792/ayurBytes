@@ -1,19 +1,17 @@
 'use client';
 
 import { useState } from 'react';
-import { User, Calendar, Users, Sparkles, Wind, Flame as Fire, Mountain, Star, Zap } from 'lucide-react';
-
-interface PatientFormData {
-  age: number;
-  gender: string;
-  prakriti: string;
-}
+import { User, Calendar, Users, Sparkles, Wind, Flame as Fire, Mountain } from 'lucide-react';
+import { useTranslation } from '@/src/contexts/TranslationContext';
+import { PatientFormData, PrakritiType } from '@/src/types';
+import { PRAKRITI_CONFIG } from '@/src/constants';
 
 interface PatientFormProps {
   onSubmit: (data: PatientFormData) => void;
 }
 
 export default function PatientForm({ onSubmit }: PatientFormProps) {
+  const { t } = useTranslation();
   const [selectedPrakriti, setSelectedPrakriti] = useState('');
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
@@ -22,12 +20,12 @@ export default function PatientForm({ onSubmit }: PatientFormProps) {
     
     const data: PatientFormData = {
       age: Number(formData.get('age')),
-      gender: formData.get('gender') as string,
-      prakriti: formData.get('prakriti') as string,
+      gender: formData.get('gender') as 'Male' | 'Female',
+      prakriti: formData.get('prakriti') as PrakritiType,
     };
     
     if (!data.prakriti) {
-      alert('Please select a Prakriti.');
+      alert(t('form.prakriti.select'));
       return;
     }
 
@@ -37,36 +35,36 @@ export default function PatientForm({ onSubmit }: PatientFormProps) {
   const prakritis = [
     {
       value: 'Vata',
-      label: 'Vata',
-      description: 'Air & Space - Creative, energetic, quick-thinking',
-      detailedDescription: 'Governs movement, breathing, and nervous system',
+      label: t('prakriti.vata'),
+      description: t('prakriti.vata.desc'),
+      detailedDescription: t('prakriti.vata.detailed'),
       color: 'from-blue-400 via-cyan-400 to-sky-400',
       bgColor: 'from-blue-50/80 to-cyan-50/80',
       borderColor: 'border-blue-200/50',
       icon: <Wind className="w-6 h-6" />,
-      traits: ['Creative', 'Energetic', 'Quick-thinking']
+      traits: [t('prakriti.vata.trait1'), t('prakriti.vata.trait2'), t('prakriti.vata.trait3')]
     },
     {
       value: 'Pitta',
-      label: 'Pitta', 
-      description: 'Fire & Water - Focused, ambitious, organized',
-      detailedDescription: 'Governs digestion, metabolism, and transformation',
+      label: t('prakriti.pitta'), 
+      description: t('prakriti.pitta.desc'),
+      detailedDescription: t('prakriti.pitta.detailed'),
       color: 'from-orange-400 via-red-400 to-pink-400',
       bgColor: 'from-orange-50/80 to-red-50/80',
       borderColor: 'border-orange-200/50',
       icon: <Fire className="w-6 h-6" />,
-      traits: ['Focused', 'Ambitious', 'Organized']
+      traits: [t('prakriti.pitta.trait1'), t('prakriti.pitta.trait2'), t('prakriti.pitta.trait3')]
     },
     {
       value: 'Kapha',
-      label: 'Kapha',
-      description: 'Earth & Water - Calm, stable, nurturing',
-      detailedDescription: 'Governs structure, immunity, and emotional stability',
+      label: t('prakriti.kapha'),
+      description: t('prakriti.kapha.desc'),
+      detailedDescription: t('prakriti.kapha.detailed'),
       color: 'from-green-400 via-emerald-400 to-teal-400',
       bgColor: 'from-green-50/80 to-emerald-50/80',
       borderColor: 'border-green-200/50',
       icon: <Mountain className="w-6 h-6" />,
-      traits: ['Calm', 'Stable', 'Nurturing']
+      traits: [t('prakriti.kapha.trait1'), t('prakriti.kapha.trait2'), t('prakriti.kapha.trait3')]
     }
   ];
 
@@ -83,7 +81,7 @@ export default function PatientForm({ onSubmit }: PatientFormProps) {
           </div>
           <h2 className="text-4xl font-bold mb-3">
             <span className="bg-gradient-to-r from-emerald-600 via-teal-600 to-cyan-600 bg-clip-text text-transparent">
-              Patient Information
+              {t('form.title')}
             </span>
           </h2>
           <div className="mt-4 flex justify-center">
@@ -98,7 +96,7 @@ export default function PatientForm({ onSubmit }: PatientFormProps) {
               <div className="w-8 h-8 bg-gradient-to-br from-emerald-400 to-teal-500 rounded-lg flex items-center justify-center shadow-md">
                 <Calendar className="w-4 h-4 text-white" />
               </div>
-              Age
+              {t('form.age')}
             </label>
             <div className="relative group">
               <input
@@ -109,7 +107,7 @@ export default function PatientForm({ onSubmit }: PatientFormProps) {
                 min="1"
                 max="120"
                 className="w-full px-6 py-5 border-2 border-gray-200/50 rounded-2xl focus:outline-none focus:ring-4 focus:ring-emerald-100 focus:border-emerald-400 transition-all duration-300 text-lg font-semibold bg-white/80 backdrop-blur-sm hover:bg-white hover:shadow-lg group-hover:border-emerald-300"
-                placeholder="Enter your age"
+                placeholder={t('form.age.placeholder')}
               />
               <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-emerald-500/5 to-teal-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
             </div>
@@ -120,7 +118,7 @@ export default function PatientForm({ onSubmit }: PatientFormProps) {
               <div className="w-8 h-8 bg-gradient-to-br from-emerald-400 to-teal-500 rounded-lg flex items-center justify-center shadow-md">
                 <Users className="w-4 h-4 text-white" />
               </div>
-              Gender
+              {t('form.gender')}
             </label>
             <div className="relative group">
               <select
@@ -129,9 +127,9 @@ export default function PatientForm({ onSubmit }: PatientFormProps) {
                 required
                 className="w-full px-6 py-5 border-2 border-gray-200/50 rounded-2xl focus:outline-none focus:ring-4 focus:ring-emerald-100 focus:border-emerald-400 transition-all duration-300 text-lg font-semibold bg-white/80 backdrop-blur-sm hover:bg-white hover:shadow-lg appearance-none cursor-pointer group-hover:border-emerald-300"
               >
-                <option value="">Select your gender</option>
-                <option value="Male">Male</option>
-                <option value="Female">Female</option>
+                <option value="">{t('form.gender.placeholder')}</option>
+                <option value="Male">{t('form.gender.male')}</option>
+                <option value="Female">{t('form.gender.female')}</option>
               </select>
               <div className="absolute inset-y-0 right-0 flex items-center pr-6 pointer-events-none">
               </div>
@@ -144,7 +142,7 @@ export default function PatientForm({ onSubmit }: PatientFormProps) {
               <div className="w-8 h-8 bg-gradient-to-br from-emerald-400 to-teal-500 rounded-lg flex items-center justify-center shadow-md">
                 <Sparkles className="w-4 h-4 text-white" />
               </div>
-              Ayurvedic Prakriti (Constitution)
+              {t('form.prakriti')}
             </div>
             
             <input type="hidden" name="prakriti" value={selectedPrakriti} />
@@ -214,7 +212,7 @@ export default function PatientForm({ onSubmit }: PatientFormProps) {
             <div className="absolute inset-0 bg-gradient-to-r from-white/20 via-transparent to-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
             <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
             <span className="relative flex items-center justify-center gap-3">
-              Generate Diet Plan
+              {t('form.submit')}
             </span>
           </button>
         </form>

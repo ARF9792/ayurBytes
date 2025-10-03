@@ -78,9 +78,3 @@ Follow these steps to set up and run the `ayurBytes` POC locally on your machine
 
 2.  **Open in browser:**
     Navigate to `http://localhost:3000` in your web browser.
-
-## 📄 File Structure Overview
-
-![File Structure Overview](./2.png)
-
-*Updated by collaborator on September 30, 2025.*

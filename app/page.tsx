@@ -3,34 +3,13 @@
 import { useState } from 'react';
 import PatientForm from './components/PatientForm';
 import DietChartDisplay from './components/DietChartDisplay';
-
-// Define the types for the data we'll be handling
-interface PatientFormData {
-  age: number;
-  gender: string;
-  prakriti: string;
-}
-
-interface Food {
-  id: number;
-  name: string;
-  category: string;
-  calories: number;
-  ayurvedic: {
-    rasa: string[];
-    guna: string[];
-    virya: string;
-    digestibility: string;
-  };
-}
-
-interface DietPlan {
-  breakfast: Food[];
-  lunch: Food[];
-  dinner: Food[];
-}
+import LanguageSelector from './components/LanguageSelector';
+import { useTranslation } from '@/src/contexts/TranslationContext';
+import { PatientFormData, DietPlan } from '@/src/types';
+import { API_ENDPOINTS } from '@/src/constants';
 
 export default function Home() {
+  const { t } = useTranslation();
   // State to hold the generated diet plan
   const [dietPlan, setDietPlan] = useState<DietPlan | null>(null);
   // State to manage loading UI
@@ -45,12 +24,11 @@ export default function Home() {
     setDietPlan(null); // Clear previous results
 
     try {
-      const response = await fetch('/api/generate-diet', {
+      const response = await fetch(API_ENDPOINTS.GENERATE_DIET, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        // THIS IS THE CORRECTED LINE: It now sends both age and prakriti
         body: JSON.stringify({ age: data.age, prakriti: data.prakriti }),
       });
 
@@ -71,14 +49,18 @@ export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-start p-4 sm:p-8 md:p-12 bg-gradient-to-br from-emerald-50 via-teal-50 to-cyan-50">
       <div className="w-full max-w-4xl mx-auto space-y-12">
+        <div className="flex justify-end mb-4">
+          <LanguageSelector />
+        </div>
+        
         <div className="text-center">
             <h1 className="text-5xl md:text-6xl font-extrabold mb-4">
               <span className="bg-gradient-to-r from-emerald-600 via-teal-600 to-cyan-600 bg-clip-text text-transparent">
-                Ayurvedic Diet Planner
+                {t('app.title')}
               </span>
             </h1>
             <p className="text-lg text-gray-600">
-              Diet plan based on unique constitution (Prakriti).
+              {t('app.subtitle')}
             </p>
         </div>
         
@@ -86,7 +68,7 @@ export default function Home() {
 
         {isLoading && (
           <div className="text-center p-8 text-lg font-semibold text-emerald-700">
-            Generating your personalized plan...
+            {t('app.generating')}
           </div>
         )}
 
@@ -99,7 +81,7 @@ export default function Home() {
         <DietChartDisplay dietPlan={dietPlan} />
 
         <footer className="text-center text-gray-500 text-sm py-8">
-            This is a Proof of Concept application for Ayurvedic diet planning.
+            {t('app.footer')}
         </footer>
       </div>
     </main>

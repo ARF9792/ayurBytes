@@ -1,29 +1,16 @@
-import { Utensils, Clock, Sun, Moon, Flame, Snowflake, Zap, Star, Heart, Leaf } from 'lucide-react';
+'use client';
 
-interface Food {
-  id: number;
-  name: string;
-  category: string;
-  calories: number;
-  ayurvedic: {
-    rasa: string[];
-    guna: string[];
-    virya: string;
-    digestibility: string;
-  };
-}
-
-interface DietPlan {
-  breakfast: Food[];
-  lunch: Food[];
-  dinner: Food[];
-}
+import { Utensils, Sun, Moon, Flame, Snowflake, Zap, Star, Heart, Leaf } from 'lucide-react';
+import { useTranslation } from '@/src/contexts/TranslationContext';
+import { Food, DietPlan } from '@/src/types';
 
 interface DietChartDisplayProps {
   dietPlan: DietPlan | null;
 }
 
 export default function DietChartDisplay({ dietPlan }: DietChartDisplayProps) {
+  const { t } = useTranslation();
+  
   if (!dietPlan) {
     return (
       <div className="relative overflow-hidden bg-gradient-to-br from-white via-emerald-50/30 to-teal-50/50 rounded-3xl shadow-2xl border border-emerald-100/50 backdrop-blur-sm">
@@ -36,7 +23,7 @@ export default function DietChartDisplay({ dietPlan }: DietChartDisplayProps) {
             <Utensils className="w-14 h-14 text-white" />
           </div>
           <p className="text-gray-600 leading-relaxed text-lg max-w-md mx-auto">
-            Complete the form to generate Ayurvedic diet plan tailored to the unique constitution.
+            {t('diet.empty.message')}
           </p>
           <div className="mt-8 flex justify-center space-x-2">
             <div className="w-2 h-2 bg-emerald-400 rounded-full animate-bounce"></div>
@@ -50,11 +37,11 @@ export default function DietChartDisplay({ dietPlan }: DietChartDisplayProps) {
 
   const getMealIcon = (mealType: string) => {
     switch (mealType) {
-      case 'Breakfast':
+      case t('diet.breakfast'):
         return <Sun className="w-6 h-6 text-amber-600" />;
-      case 'Lunch':
+      case t('diet.lunch'):
         return <Utensils className="w-6 h-6 text-orange-600" />;
-      case 'Dinner':
+      case t('diet.dinner'):
         return <Moon className="w-6 h-6 text-indigo-600" />;
       default:
         return <Utensils className="w-6 h-6 text-gray-600" />;
@@ -63,11 +50,11 @@ export default function DietChartDisplay({ dietPlan }: DietChartDisplayProps) {
 
   const getMealGradient = (mealType: string) => {
     switch (mealType) {
-      case 'Breakfast':
+      case t('diet.breakfast'):
         return 'from-amber-400 via-yellow-400 to-orange-400';
-      case 'Lunch':
+      case t('diet.lunch'):
         return 'from-orange-400 via-red-400 to-pink-400';
-      case 'Dinner':
+      case t('diet.dinner'):
         return 'from-indigo-400 via-purple-400 to-violet-400';
       default:
         return 'from-gray-400 to-gray-500';
@@ -76,11 +63,11 @@ export default function DietChartDisplay({ dietPlan }: DietChartDisplayProps) {
 
   const getMealBg = (mealType: string) => {
     switch (mealType) {
-      case 'Breakfast':
+      case t('diet.breakfast'):
         return 'from-amber-50/80 via-yellow-50/60 to-orange-50/80';
-      case 'Lunch':
+      case t('diet.lunch'):
         return 'from-orange-50/80 via-red-50/60 to-pink-50/80';
-      case 'Dinner':
+      case t('diet.dinner'):
         return 'from-indigo-50/80 via-purple-50/60 to-violet-50/80';
       default:
         return 'from-gray-50 to-gray-100';
@@ -163,7 +150,7 @@ export default function DietChartDisplay({ dietPlan }: DietChartDisplayProps) {
                               </span>
                               <span className="px-3 py-1 rounded-full text-sm font-medium bg-gradient-to-r from-purple-100 to-pink-100 text-purple-700 border border-purple-200/50">
                                 <Heart className="w-3 h-3 inline mr-1" />
-                                {food.calories} kcal
+                                {food.calories} {t('diet.kcal')}
                               </span>
                             </div>
                           </div>
@@ -181,7 +168,7 @@ export default function DietChartDisplay({ dietPlan }: DietChartDisplayProps) {
                         <div className="space-y-3">
                           <h5 className="font-semibold text-gray-700 flex items-center gap-2">
                             <div className="w-2 h-2 bg-emerald-500 rounded-full"></div>
-                            Rasa (Taste)
+                            {t('diet.rasa')}
                           </h5>
                           <div className="flex flex-wrap gap-2">
                             {food.ayurvedic.rasa.map((rasa, index) => (
@@ -194,7 +181,7 @@ export default function DietChartDisplay({ dietPlan }: DietChartDisplayProps) {
                         <div className="space-y-3">
                           <h5 className="font-semibold text-gray-700 flex items-center gap-2">
                             <div className="w-2 h-2 bg-teal-500 rounded-full"></div>
-                            Guna (Quality)
+                            {t('diet.guna')}
                           </h5>
                           <div className="flex flex-wrap gap-2">
                             {food.ayurvedic.guna.map((guna, index) => (
@@ -228,7 +215,7 @@ export default function DietChartDisplay({ dietPlan }: DietChartDisplayProps) {
           </div>
           <h2 className="text-4xl font-bold mb-3">
             <span className="bg-gradient-to-r from-emerald-600 via-teal-600 to-cyan-600 bg-clip-text text-transparent">
-              Ayurvedic Diet Plan
+              {t('diet.title')}
             </span>
           </h2>
           <div className="mt-6 flex justify-center">
@@ -237,9 +224,9 @@ export default function DietChartDisplay({ dietPlan }: DietChartDisplayProps) {
         </div>
         
         <div className="space-y-8">
-          {renderMealSection('Breakfast', dietPlan.breakfast)}
-          {renderMealSection('Lunch', dietPlan.lunch)}
-          {renderMealSection('Dinner', dietPlan.dinner)}
+          {renderMealSection(t('diet.breakfast'), dietPlan.breakfast)}
+          {renderMealSection(t('diet.lunch'), dietPlan.lunch)}
+          {renderMealSection(t('diet.dinner'), dietPlan.dinner)}
         </div>
         
         {dietPlan.breakfast.length === 0 && 
