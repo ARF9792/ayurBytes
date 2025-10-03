@@ -13,51 +13,130 @@ The goal of this POC is to showcase the feasibility and potential of integrating
 
 ## ✨ Features (Current POC)
 
-* **Comprehensive Patient Management:** Detailed health profiling with 11+ parameters including:
-  - Physical measurements (Height, Weight, Auto-calculated BMI)
-  - Medical conditions and allergies tracking
-  - Dietary habits and meal frequency
-  - Lifestyle factors (Activity level, sleep, stress)
-  - Ayurvedic assessment (Bowel movements, digestion quality)
+### 🏥 1. Comprehensive Patient Management
+* **Detailed Health Profiling** with 11+ parameters:
+  - Personal information (Name, Age, Gender, Patient ID)
+  - Physical measurements (Height, Weight, Auto-calculated BMI with category indicators)
+  - Medical conditions tracking (Diabetes, Hypertension, Heart Disease, Thyroid, PCOD/PCOS, etc.)
+  - Food allergies and current medications
+  - Dietary habits (Vegetarian, Non-Vegetarian, Vegan, Eggetarian)
+  - Meal frequency and water intake tracking
+  - Lifestyle factors (Activity level, sleep hours, stress assessment)
+  - Ayurvedic assessment (Bowel movements, digestion quality, Prakriti)
   - Patient data persistence (localStorage)
 
-* **Advanced Nutritional Analysis:** Scientific calculations including:
-  - Daily caloric requirements (Mifflin-St Jeor Equation)
+### 📊 2. Advanced Nutritional Analysis
+* **Scientific Calculations:**
+  - Daily caloric requirements using **Mifflin-St Jeor Equation**
+  - Activity level multipliers (1.2x to 1.9x)
   - Macro nutrients tracking (Protein, Carbs, Fats, Fiber)
-  - Micro nutrients structure (Vitamins, Minerals)
-  - Progress tracking with visual indicators
+  - Micro nutrients structure (Vitamins A, C, D, B12 | Minerals: Calcium, Iron, Magnesium, Potassium, Zinc)
+  - Visual progress bars with color-coded indicators
   - Percentage of daily requirements met
+  - Per-serving and total nutrition display
 
-* **Ayurvedic Intelligence:**
-  - Prakriti-Based Diet Generation (Vata, Pitta, Kapha)
-  - Six Tastes (Rasa) balance visualization
-  - Personalized Ayurvedic guidelines based on health profile
-  - Meal timing recommendations aligned with digestive fire (Agni)
+### 🕉️ 3. Ayurvedic Intelligence
+* **Prakriti-Based Diet Generation** (Vata, Pitta, Kapha)
+  - Personalized food selection based on Ayurvedic principles
+  - Virya (potency) and Guna (qualities) balancing
+* **Six Tastes (Rasa) Balance** visualization with emojis
+  - 🍯 Sweet, 🍋 Sour, 🧂 Salty, 🌶️ Pungent, 🥬 Bitter, 🫘 Astringent
+* **Personalized Guidelines** based on:
+  - Medical conditions
+  - Bowel movement patterns
+  - Digestion quality
+  - Stress levels
+* **Meal Timing Recommendations** aligned with digestive fire (Agni)
+  - Breakfast: 7:00-9:00 AM
+  - Lunch: 12:00-1:00 PM (peak Agni)
+  - Dinner: 6:00-7:30 PM
 
-* **Age-Group Customization:** Diet plans adapted for different age groups (Child, Adult, Elderly)
+### 🍽️ 4. Enhanced Food Database
+* **50 food items** with complete nutritional data
+* **Categories:**
+  - Grains (10 items)
+  - Lentils (6 items)
+  - Vegetables (13 items)
+  - Fruits (7 items)
+  - Dairy (4 items)
+  - Protein/Nuts (6 items)
+  - Spices (4 items)
+* **Regional Coverage:** Pan-Indian, North, South, East, West Indian foods
+* **Seasonal Information:** Tagged with suitable seasons
+* **Glycemic Index** data for diabetes management
 
-* **Multilingual Support:** Available in 7 Indian languages:
+### 👨‍🍳 5. Recipe-Based Diet Charts
+* **5 Ayurvedic Recipes:**
+  - Moong Dal Khichdi (Tridoshic, all seasons)
+  - Dal Tadka (North Indian classic)
+  - Palak Paneer (Iron & calcium rich)
+  - Vegetable Upma (South Indian breakfast)
+  - Chana Masala (High protein, diabetes-friendly)
+* **Auto-Calculation:** Nutrition computed from ingredients
+* **Detailed Instructions:** Step-by-step cooking guide with timing
+* **Health Benefits:** Ayurvedic notes and prakriti suitability
+* **Interactive UI:** Click to expand recipe details
+
+### 📥 6. Export & Print Functionality
+* **Professional PDF Generation:**
+  - Patient information section
+  - Nutritional summary tables
+  - Complete meal plans with categories and calories
+  - Meal timing recommendations
+  - Ayurvedic guidelines
+  - Auto-pagination with page numbers
+* **Multiple Export Options:**
+  - Download PDF (auto-dated filename)
+  - Share PDF (WhatsApp, Email via Web Share API)
+  - Print directly from browser
+* **Mobile-Friendly:** Native sharing for easy distribution
+
+### 🌍 7. Multilingual Support
+* Available in **7 Indian languages:**
   - English, Hindi, Bengali, Telugu, Marathi, Tamil, Sanskrit
+* Easy language switching
+* Culturally appropriate translations
 
+### 🎨 8. Modern UI/UX
 * **Dual Form System:**
   - Quick Form: Basic prakriti assessment
   - Comprehensive Assessment: Full patient profiling
-
-* **Modern UI:** Built with Next.js 15, TypeScript, and Tailwind CSS for a responsive and aesthetically pleasing experience
+* **Visual Analytics:**
+  - Color-coded BMI calculator
+  - Progress bars for nutrition tracking
+  - Gradient-themed sections
+  - Emoji-based indicators
+* **Responsive Design:** Works on desktop, tablet, and mobile
+* **Dark Mode Ready:** Preparation for future implementation
 
 ## 🚀 Technologies Used
 
 This POC leverages a modern web development stack:
 
 * **Frontend:**
-    * [**Next.js**](https://nextjs.org/) (React Framework)
-    * [**TypeScript**](https://www.typescriptlang.org/)
-    * [**Tailwind CSS**](https://tailwindcss.com/)
-    * [**Lucide React**](https://lucide.dev/) (for icons)
+    * [**Next.js 15.5.4**](https://nextjs.org/) (React 19 Framework with Turbopack)
+    * [**TypeScript 5**](https://www.typescriptlang.org/) (Strict mode)
+    * [**Tailwind CSS 3**](https://tailwindcss.com/) (Utility-first styling)
+    * [**Lucide React**](https://lucide.dev/) (Beautiful icons)
+    
 * **Backend:**
-    * [**Next.js API Routes**](https://nextjs.org/docs/api-routes/introduction) (for serverless API endpoints)
+    * [**Next.js API Routes**](https://nextjs.org/docs/api-routes/introduction) (Serverless API endpoints)
+    * TypeScript server-side logic
+    
+* **PDF Generation:**
+    * [**jsPDF**](https://github.com/parallax/jsPDF) (PDF document generation)
+    * [**jspdf-autotable**](https://github.com/simonbengtsson/jsPDF-AutoTable) (Table formatting)
+    
 * **Data:**
-    * `foods.json` (Local JSON file serving as a mock database for Ayurvedic food properties)
+    * `foods.json` (50 items with complete nutritional data)
+    * `recipes.json` (5 Ayurvedic recipes)
+    * `locales/` (Multilingual translations)
+    * localStorage (Patient profile persistence)
+
+* **Development:**
+    * Node.js 18+
+    * npm/yarn package management
+    * Git version control
 
 ## 💡 How it Works (Core Logic)
 
