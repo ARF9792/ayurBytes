@@ -1,0 +1,184 @@
+[
+  {
+    "id": 1,
+    "name": "Moong Dal",
+    "category": "Lentil",
+    "calories": 105,
+    "ayurvedic": {
+      "rasa": ["Sweet", "Astringent"],
+      "guna": ["Light", "Dry"],
+      "virya": "Cooling",
+      "digestibility": "Easy",
+      "suitableFor": ["Child", "Adult", "Elderly"]
+    }
+  },
+  {
+    "id": 2,
+    "name": "Basmati Rice (White)",
+    "category": "Grain",
+    "calories": 205,
+    "ayurvedic": {
+      "rasa": ["Sweet"],
+      "guna": ["Light", "Soft"],
+      "virya": "Cooling",
+      "digestibility": "Easy",
+      "suitableFor": ["Child", "Adult", "Elderly"]
+    }
+  },
+  {
+    "id": 3,
+    "name": "Yogurt (Full Fat)",
+    "category": "Dairy",
+    "calories": 150,
+    "ayurvedic": {
+      "rasa": ["Sour", "Sweet"],
+      "guna": ["Heavy", "Oily"],
+      "virya": "Heating",
+      "digestibility": "Difficult",
+      "suitableFor": ["Adult"]
+    }
+  },
+  {
+    "id": 4,
+    "name": "Spinach",
+    "category": "Vegetable",
+    "calories": 23,
+    "ayurvedic": {
+      "rasa": ["Astringent", "Sweet"],
+      "guna": ["Light", "Rough"],
+      "virya": "Cooling",
+      "digestibility": "Easy",
+      "suitableFor": ["Adult"]
+    }
+  },
+  {
+    "id": 5,
+    "name": "Ghee (Clarified Butter)",
+    "category": "Fat",
+    "calories": 112,
+    "ayurvedic": {
+      "rasa": ["Sweet"],
+      "guna": ["Oily", "Smooth"],
+      "virya": "Cooling",
+      "digestibility": "Easy",
+      "suitableFor": ["Child", "Adult", "Elderly"]
+    }
+  },
+  {
+    "id": 6,
+    "name": "Chicken Breast",
+    "category": "Protein",
+    "calories": 165,
+    "ayurvedic": {
+      "rasa": ["Sweet"],
+      "guna": ["Heavy", "Dry"],
+      "virya": "Heating",
+      "digestibility": "Difficult",
+      "suitableFor": ["Adult"]
+    }
+  },
+  {
+    "id": 7,
+    "name": "Almonds",
+    "category": "Nut",
+    "calories": 164,
+    "ayurvedic": {
+      "rasa": ["Sweet"],
+      "guna": ["Heavy", "Oily"],
+      "virya": "Heating",
+      "digestibility": "Difficult",
+      "suitableFor": ["Adult"]
+    }
+  },
+  {
+    "id": 8,
+    "name": "Cooked Oats",
+    "category": "Grain",
+    "calories": 150,
+    "ayurvedic": {
+      "rasa": ["Sweet"],
+      "guna": ["Heavy", "Oily", "Soft"],
+      "virya": "Heating",
+      "digestibility": "Easy",
+      "suitableFor": ["Child", "Adult", "Elderly"]
+    }
+  },
+  {
+    "id": 9,
+    "name": "Red Lentil (Masoor Dal)",
+    "category": "Lentil",
+    "calories": 115,
+    "ayurvedic": {
+      "rasa": ["Sweet", "Astringent"],
+      "guna": ["Light", "Dry"],
+      "virya": "Heating",
+      "digestibility": "Easy",
+      "suitableFor": ["Adult", "Elderly"]
+    }
+  },
+  {
+    "id": 10,
+    "name": "Cooked Carrots",
+    "category": "Vegetable",
+    "calories": 52,
+    "ayurvedic": {
+      "rasa": ["Sweet"],
+      "guna": ["Light", "Oily"],
+      "virya": "Heating",
+      "digestibility": "Easy",
+      "suitableFor": ["Child", "Adult", "Elderly"]
+    }
+  },
+  {
+    "id": 11,
+    "name": "Cucumber",
+    "category": "Vegetable",
+    "calories": 16,
+    "ayurvedic": {
+      "rasa": ["Sweet", "Astringent"],
+      "guna": ["Light", "Dry"],
+      "virya": "Cooling",
+      "digestibility": "Easy",
+      "suitableFor": ["Adult"]
+    }
+  },
+  {
+    "id": 12,
+    "name": "Barley",
+    "category": "Grain",
+    "calories": 193,
+    "ayurvedic": {
+      "rasa": ["Sweet", "Astringent"],
+      "guna": ["Light", "Dry"],
+      "virya": "Cooling",
+      "digestibility": "Easy",
+      "suitableFor": ["Adult", "Elderly"]
+    }
+  },
+  {
+    "id": 13,
+    "name": "Chickpeas (Chana)",
+    "category": "Lentil",
+    "calories": 269,
+    "ayurvedic": {
+      "rasa": ["Astringent"],
+      "guna": ["Light", "Dry"],
+      "virya": "Cooling",
+      "digestibility": "Difficult",
+      "suitableFor": ["Adult"]
+    }
+  },
+  {
+    "id": 14,
+    "name": "Quinoa",
+    "category": "Grain",
+    "calories": 222,
+    "ayurvedic": {
+      "rasa": ["Sweet", "Astringent"],
+      "guna": ["Light", "Dry"],
+      "virya": "Heating",
+      "digestibility": "Easy",
+      "suitableFor": ["Adult"]
+    }
+  }
+]
