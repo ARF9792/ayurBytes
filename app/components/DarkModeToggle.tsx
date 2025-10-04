@@ -4,7 +4,16 @@ import { Moon, Sun } from 'lucide-react';
 import { useDarkMode } from '@/src/contexts/DarkModeContext';
 
 export default function DarkModeToggle() {
-  const { isDarkMode, toggleDarkMode } = useDarkMode();
+  const { isDarkMode, toggleDarkMode, mounted } = useDarkMode();
+
+  // Don't render until mounted to avoid hydration mismatch
+  if (!mounted) {
+    return (
+      <div className="p-2 rounded-lg bg-white border-2 border-gray-200 w-10 h-10">
+        {/* Placeholder to prevent layout shift */}
+      </div>
+    );
+  }
 
   return (
     <button

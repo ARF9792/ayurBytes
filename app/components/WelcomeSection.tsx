@@ -12,12 +12,12 @@ interface FeatureCardProps {
 
 function FeatureCard({ icon, title, description, color }: FeatureCardProps) {
   return (
-    <div className={`bg-white rounded-2xl p-6 shadow-lg border-2 ${color} hover:shadow-xl transition-all duration-300 hover:-translate-y-1`}>
+    <div className={`bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg border-2 ${color} hover:shadow-xl transition-all duration-300 hover:-translate-y-1`}>
       <div className={`w-12 h-12 rounded-xl ${color.replace('border-', 'bg-').replace('500', '100')} flex items-center justify-center mb-4`}>
         {icon}
       </div>
-      <h3 className="text-xl font-bold text-gray-900 mb-2">{title}</h3>
-      <p className="text-gray-600 text-sm leading-relaxed">{description}</p>
+      <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">{title}</h3>
+      <p className="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">{description}</p>
     </div>
   );
 }
@@ -30,7 +30,7 @@ export default function WelcomeSection() {
       {/* Hero Section */}
       <div className="text-center space-y-4">
         <div className="inline-block">
-          <span className="px-4 py-2 rounded-full bg-emerald-100 text-emerald-700 text-sm font-semibold">
+          <span className="px-4 py-2 rounded-full bg-emerald-100 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-300 text-sm font-semibold">
             ✨ {t('app.tagline')}
           </span>
         </div>
@@ -39,14 +39,14 @@ export default function WelcomeSection() {
             {t('welcome.title')}
           </span>
         </h1>
-        <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+        <p className="text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
           {t('welcome.subtitle')}
         </p>
       </div>
 
       {/* How It Works */}
-      <div className="bg-gradient-to-r from-emerald-50 to-teal-50 rounded-3xl p-8 border-2 border-emerald-200">
-        <h2 className="text-2xl font-bold text-gray-900 mb-6 text-center">
+      <div className="bg-gradient-to-r from-emerald-50 to-teal-50 dark:from-emerald-900/20 dark:to-teal-900/20 rounded-3xl p-8 border-2 border-emerald-200 dark:border-emerald-800">
+        <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6 text-center">
           🌟 {t('welcome.howItWorks')}
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -54,22 +54,22 @@ export default function WelcomeSection() {
             <div className="w-16 h-16 rounded-full bg-emerald-500 text-white flex items-center justify-center text-2xl font-bold mx-auto mb-3">
               1
             </div>
-            <h3 className="font-semibold text-gray-900 mb-2">{t('welcome.step1.title')}</h3>
-            <p className="text-sm text-gray-600">{t('welcome.step1.desc')}</p>
+            <h3 className="font-semibold text-gray-900 dark:text-white mb-2">{t('welcome.step1.title')}</h3>
+            <p className="text-sm text-gray-600 dark:text-gray-400">{t('welcome.step1.desc')}</p>
           </div>
           <div className="text-center">
             <div className="w-16 h-16 rounded-full bg-teal-500 text-white flex items-center justify-center text-2xl font-bold mx-auto mb-3">
               2
             </div>
-            <h3 className="font-semibold text-gray-900 mb-2">{t('welcome.step2.title')}</h3>
-            <p className="text-sm text-gray-600">{t('welcome.step2.desc')}</p>
+            <h3 className="font-semibold text-gray-900 dark:text-white mb-2">{t('welcome.step2.title')}</h3>
+            <p className="text-sm text-gray-600 dark:text-gray-400">{t('welcome.step2.desc')}</p>
           </div>
           <div className="text-center">
             <div className="w-16 h-16 rounded-full bg-cyan-500 text-white flex items-center justify-center text-2xl font-bold mx-auto mb-3">
               3
             </div>
-            <h3 className="font-semibold text-gray-900 mb-2">{t('welcome.step3.title')}</h3>
-            <p className="text-sm text-gray-600">{t('welcome.step3.desc')}</p>
+            <h3 className="font-semibold text-gray-900 dark:text-white mb-2">{t('welcome.step3.title')}</h3>
+            <p className="text-sm text-gray-600 dark:text-gray-400">{t('welcome.step3.desc')}</p>
           </div>
         </div>
       </div>
@@ -103,13 +103,13 @@ export default function WelcomeSection() {
       </div>
 
       {/* Getting Started CTA */}
-      <div className="bg-white rounded-2xl p-6 shadow-lg text-center border-2 border-gray-200">
-        <h3 className="text-2xl font-bold text-gray-900 mb-2">{t('welcome.cta.title')}</h3>
-        <p className="text-gray-600 mb-4">{t('welcome.cta.subtitle')}</p>
-        <div className="flex justify-center gap-2 text-sm text-gray-500">
-          <span className="px-3 py-1 bg-emerald-100 text-emerald-700 rounded-full">✓ {t('welcome.badge.free')}</span>
-          <span className="px-3 py-1 bg-teal-100 text-teal-700 rounded-full">✓ {t('welcome.badge.scienceBacked')}</span>
-          <span className="px-3 py-1 bg-cyan-100 text-cyan-700 rounded-full">✓ {t('welcome.badge.personalized')}</span>
+      <div className="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg text-center border-2 border-gray-200 dark:border-gray-700">
+        <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">{t('welcome.cta.title')}</h3>
+        <p className="text-gray-600 dark:text-gray-400 mb-4">{t('welcome.cta.subtitle')}</p>
+        <div className="flex justify-center gap-2 text-sm text-gray-500 dark:text-gray-400">
+          <span className="px-3 py-1 bg-emerald-100 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-300 rounded-full">✓ {t('welcome.badge.free')}</span>
+          <span className="px-3 py-1 bg-teal-100 dark:bg-teal-900/30 text-teal-700 dark:text-teal-300 rounded-full">✓ {t('welcome.badge.scienceBacked')}</span>
+          <span className="px-3 py-1 bg-cyan-100 dark:bg-cyan-900/30 text-cyan-700 dark:text-cyan-300 rounded-full">✓ {t('welcome.badge.personalized')}</span>
         </div>
       </div>
     </div>

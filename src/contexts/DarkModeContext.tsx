@@ -5,6 +5,7 @@ import React, { createContext, useContext, useState, useEffect, ReactNode } from
 type DarkModeContextType = {
   isDarkMode: boolean;
   toggleDarkMode: () => void;
+  mounted: boolean;
 };
 
 const DarkModeContext = createContext<DarkModeContextType | undefined>(undefined);
@@ -15,12 +16,12 @@ export function DarkModeProvider({ children }: { children: ReactNode }) {
 
   // Load dark mode preference from localStorage
   useEffect(() => {
-    setMounted(true);
     const savedMode = localStorage.getItem('darkMode');
     if (savedMode === 'true') {
       setIsDarkMode(true);
       document.documentElement.classList.add('dark');
     }
+    setMounted(true);
   }, []);
 
   const toggleDarkMode = () => {
@@ -35,13 +36,8 @@ export function DarkModeProvider({ children }: { children: ReactNode }) {
     }
   };
 
-  // Prevent flash of incorrect theme
-  if (!mounted) {
-    return <>{children}</>;
-  }
-
   return (
-    <DarkModeContext.Provider value={{ isDarkMode, toggleDarkMode }}>
+    <DarkModeContext.Provider value={{ isDarkMode, toggleDarkMode, mounted }}>
       {children}
     </DarkModeContext.Provider>
   );
