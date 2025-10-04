@@ -7,6 +7,7 @@ import {
   Scale, Ruler, TrendingUp
 } from 'lucide-react';
 import { useTranslation } from '@/src/contexts/TranslationContext';
+import VoiceInput from './VoiceInput';
 import { 
   PatientProfile, 
   PrakritiType, 
@@ -31,6 +32,11 @@ export default function ComprehensivePatientForm({ onSubmit }: ComprehensivePati
   const [weight, setWeight] = useState<number>(0);
   const [bmi, setBmi] = useState<number>(0);
   const [generateWeekly, setGenerateWeekly] = useState(false);
+  
+  // Voice input states
+  const [nameValue, setNameValue] = useState('');
+  const [allergiesValue, setAllergiesValue] = useState('');
+  const [medicationsValue, setMedicationsValue] = useState('');
 
   // Calculate BMI when height or weight changes
   const calculateBMI = (h: number, w: number) => {
@@ -202,16 +208,22 @@ export default function ComprehensivePatientForm({ onSubmit }: ComprehensivePati
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="space-y-2">
-                <label htmlFor="name" className="block text-sm font-semibold text-gray-700">
-                  Full Name *
+                <label htmlFor="name" className="block text-sm font-semibold text-gray-700 flex items-center justify-between">
+                  <span>Full Name *</span>
+                  <VoiceInput 
+                    onTranscript={(text) => setNameValue(nameValue ? `${nameValue} ${text}` : text)}
+                    placeholder="Voice input"
+                  />
                 </label>
                 <input
                   type="text"
                   id="name"
                   name="name"
                   required
+                  value={nameValue}
+                  onChange={(e) => setNameValue(e.target.value)}
                   className="w-full px-4 py-3 border-2 border-gray-200/50 rounded-xl focus:outline-none focus:ring-4 focus:ring-emerald-100 focus:border-emerald-400 transition-all duration-300 text-base font-medium bg-white/80"
-                  placeholder="Enter patient name"
+                  placeholder="Enter patient name or use voice input"
                 />
               </div>
 
@@ -413,31 +425,49 @@ export default function ComprehensivePatientForm({ onSubmit }: ComprehensivePati
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="space-y-2">
-                  <label htmlFor="allergies" className="block text-sm font-semibold text-gray-700">
-                    <AlertCircle className="w-4 h-4 inline mr-1" />
-                    Food Allergies (comma-separated)
+                  <label htmlFor="allergies" className="block text-sm font-semibold text-gray-700 flex items-center justify-between">
+                    <span>
+                      <AlertCircle className="w-4 h-4 inline mr-1" />
+                      Food Allergies (comma-separated)
+                    </span>
+                    <VoiceInput 
+                      onTranscript={(text) => setAllergiesValue(allergiesValue ? `${allergiesValue}, ${text}` : text)}
+                      placeholder="Voice input"
+                    />
                   </label>
                   <input
                     type="text"
                     id="allergies"
                     name="allergies"
+                    value={allergiesValue}
+                    onChange={(e) => setAllergiesValue(e.target.value)}
                     className="w-full px-4 py-3 border-2 border-gray-200/50 rounded-xl focus:outline-none focus:ring-4 focus:ring-emerald-100 focus:border-emerald-400 transition-all duration-300 text-base font-medium bg-white/80"
-                    placeholder="e.g., Peanuts, Dairy"
+                    placeholder="e.g., Peanuts, Dairy, Lentils (or use voice 🎤)"
                   />
+                  <p className="text-xs text-gray-500 mt-1">💡 Click the mic icon to speak your allergies</p>
                 </div>
 
                 <div className="space-y-2">
-                  <label htmlFor="medications" className="block text-sm font-semibold text-gray-700">
-                    <Pill className="w-4 h-4 inline mr-1" />
-                    Current Medications (comma-separated)
+                  <label htmlFor="medications" className="block text-sm font-semibold text-gray-700 flex items-center justify-between">
+                    <span>
+                      <Pill className="w-4 h-4 inline mr-1" />
+                      Current Medications (comma-separated)
+                    </span>
+                    <VoiceInput 
+                      onTranscript={(text) => setMedicationsValue(medicationsValue ? `${medicationsValue}, ${text}` : text)}
+                      placeholder="Voice input"
+                    />
                   </label>
                   <input
                     type="text"
                     id="medications"
                     name="medications"
+                    value={medicationsValue}
+                    onChange={(e) => setMedicationsValue(e.target.value)}
                     className="w-full px-4 py-3 border-2 border-gray-200/50 rounded-xl focus:outline-none focus:ring-4 focus:ring-emerald-100 focus:border-emerald-400 transition-all duration-300 text-base font-medium bg-white/80"
-                    placeholder="e.g., Metformin, Aspirin"
+                    placeholder="e.g., Metformin, Aspirin (or use voice 🎤)"
                   />
+                  <p className="text-xs text-gray-500 mt-1">💡 Click the mic icon to speak your medications</p>
                 </div>
               </div>
             </div>
