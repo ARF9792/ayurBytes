@@ -56,6 +56,29 @@ export function filterFoodsByCategory(foods: Food[], category: string): Food[] {
 }
 
 /**
+ * Filters out foods based on allergies
+ * @param foods - Array of foods
+ * @param allergies - Array of allergen strings
+ * @returns Filtered foods without allergens
+ */
+export function filterFoodsByAllergies(foods: Food[], allergies: string[]): Food[] {
+  if (!allergies || allergies.length === 0) return foods;
+  
+  return foods.filter(food => {
+    const foodNameLower = food.name.toLowerCase();
+    const categoryLower = food.category.toLowerCase();
+    
+    // Check if any allergen matches food name or category
+    return !allergies.some(allergen => {
+      const allergenLower = allergen.toLowerCase().trim();
+      return foodNameLower.includes(allergenLower) || 
+             categoryLower.includes(allergenLower) ||
+             allergenLower.includes(categoryLower);
+    });
+  });
+}
+
+/**
  * Calculates total calories from an array of foods
  * @param foods - Array of foods
  * @returns Total calorie count

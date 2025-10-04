@@ -6,11 +6,13 @@
     "calories": 105,
     "servingSize": "100g cooked",
     "region": "Pan-Indian",
-    "season": ["All"],
+    "season": [
+      "All"
+    ],
     "nutrition": {
       "calories": 105,
-      "protein": 7.0,
-      "carbohydrates": 19.0,
+      "protein": 7,
+      "carbohydrates": 19,
       "fats": 0.4,
       "fiber": 7.6,
       "sugar": 0.5,
@@ -18,16 +20,28 @@
       "calcium": 27,
       "magnesium": 48,
       "potassium": 266,
-      "vitaminC": 1.0,
+      "vitaminC": 1,
       "glycemicIndex": 38
     },
     "ayurvedic": {
-      "rasa": ["Sweet", "Astringent"],
-      "guna": ["Light", "Dry"],
+      "rasa": [
+        "Sweet",
+        "Astringent"
+      ],
+      "guna": [
+        "Light",
+        "Dry"
+      ],
       "virya": "Cooling",
       "digestibility": "Easy",
-      "suitableFor": ["Child", "Adult", "Elderly"]
-    }
+      "suitableFor": [
+        "Child",
+        "Adult",
+        "Elderly"
+      ]
+    },
+    "dietType": "Vegetarian",
+    "nameHindi": "मूंग दाल (Green Gram)"
   },
   {
     "id": 2,
@@ -36,11 +50,13 @@
     "calories": 205,
     "servingSize": "100g cooked",
     "region": "North Indian",
-    "season": ["All"],
+    "season": [
+      "All"
+    ],
     "nutrition": {
       "calories": 205,
       "protein": 4.3,
-      "carbohydrates": 45.0,
+      "carbohydrates": 45,
       "fats": 0.4,
       "fiber": 0.6,
       "sugar": 0.1,
@@ -51,12 +67,23 @@
       "glycemicIndex": 58
     },
     "ayurvedic": {
-      "rasa": ["Sweet"],
-      "guna": ["Light", "Soft"],
+      "rasa": [
+        "Sweet"
+      ],
+      "guna": [
+        "Light",
+        "Soft"
+      ],
       "virya": "Cooling",
       "digestibility": "Easy",
-      "suitableFor": ["Child", "Adult", "Elderly"]
-    }
+      "suitableFor": [
+        "Child",
+        "Adult",
+        "Elderly"
+      ]
+    },
+    "dietType": "Vegetarian",
+    "nameHindi": "बासमती चावल (White)"
   },
   {
     "id": 3,
@@ -65,7 +92,9 @@
     "calories": 112,
     "servingSize": "100g cooked",
     "region": "South Indian",
-    "season": ["All"],
+    "season": [
+      "All"
+    ],
     "nutrition": {
       "calories": 112,
       "protein": 2.6,
@@ -80,12 +109,22 @@
       "glycemicIndex": 50
     },
     "ayurvedic": {
-      "rasa": ["Sweet"],
-      "guna": ["Heavy", "Rough"],
+      "rasa": [
+        "Sweet"
+      ],
+      "guna": [
+        "Heavy",
+        "Rough"
+      ],
       "virya": "Heating",
       "digestibility": "Moderate",
-      "suitableFor": ["Adult", "Elderly"]
-    }
+      "suitableFor": [
+        "Adult",
+        "Elderly"
+      ]
+    },
+    "dietType": "Vegetarian",
+    "nameHindi": "Brown चावल"
   },
   {
     "id": 4,
@@ -94,11 +133,13 @@
     "calories": 120,
     "servingSize": "1 medium roti",
     "region": "North Indian",
-    "season": ["All"],
+    "season": [
+      "All"
+    ],
     "nutrition": {
       "calories": 120,
-      "protein": 4.0,
-      "carbohydrates": 22.0,
+      "protein": 4,
+      "carbohydrates": 22,
       "fats": 2.5,
       "fiber": 3.5,
       "sugar": 0.4,
@@ -109,12 +150,22 @@
       "glycemicIndex": 62
     },
     "ayurvedic": {
-      "rasa": ["Sweet"],
-      "guna": ["Heavy", "Dry"],
+      "rasa": [
+        "Sweet"
+      ],
+      "guna": [
+        "Heavy",
+        "Dry"
+      ],
       "virya": "Heating",
       "digestibility": "Moderate",
-      "suitableFor": ["Adult", "Elderly"]
-    }
+      "suitableFor": [
+        "Adult",
+        "Elderly"
+      ]
+    },
+    "dietType": "Vegetarian",
+    "nameHindi": "Whole Wheat रोटी"
   },
   {
     "id": 5,
@@ -123,7 +174,9 @@
     "calories": 23,
     "servingSize": "100g cooked",
     "region": "Pan-Indian",
-    "season": ["Winter"],
+    "season": [
+      "Winter"
+    ],
     "nutrition": {
       "calories": 23,
       "protein": 2.9,
@@ -140,12 +193,23 @@
       "glycemicIndex": 15
     },
     "ayurvedic": {
-      "rasa": ["Astringent", "Sweet"],
-      "guna": ["Light", "Rough"],
+      "rasa": [
+        "Astringent",
+        "Sweet"
+      ],
+      "guna": [
+        "Light",
+        "Rough"
+      ],
       "virya": "Cooling",
       "digestibility": "Easy",
-      "suitableFor": ["Adult", "Elderly"]
-    }
+      "suitableFor": [
+        "Adult",
+        "Elderly"
+      ]
+    },
+    "dietType": "Vegetarian",
+    "nameHindi": "पालक (Palak)"
   },
   {
     "id": 6,
@@ -154,7 +218,10 @@
     "calories": 14,
     "servingSize": "100g cooked",
     "region": "Pan-Indian",
-    "season": ["Summer", "Monsoon"],
+    "season": [
+      "Summer",
+      "Monsoon"
+    ],
     "nutrition": {
       "calories": 14,
       "protein": 0.6,
@@ -170,12 +237,24 @@
       "glycemicIndex": 15
     },
     "ayurvedic": {
-      "rasa": ["Sweet", "Bitter"],
-      "guna": ["Light", "Soft"],
+      "rasa": [
+        "Sweet",
+        "Bitter"
+      ],
+      "guna": [
+        "Light",
+        "Soft"
+      ],
       "virya": "Cooling",
       "digestibility": "Easy",
-      "suitableFor": ["Child", "Adult", "Elderly"]
-    }
+      "suitableFor": [
+        "Child",
+        "Adult",
+        "Elderly"
+      ]
+    },
+    "dietType": "Vegetarian",
+    "nameHindi": "लौकी (Lauki)"
   },
   {
     "id": 7,
@@ -184,7 +263,9 @@
     "calories": 41,
     "servingSize": "100g raw",
     "region": "Pan-Indian",
-    "season": ["Winter"],
+    "season": [
+      "Winter"
+    ],
     "nutrition": {
       "calories": 41,
       "protein": 0.9,
@@ -201,12 +282,23 @@
       "glycemicIndex": 39
     },
     "ayurvedic": {
-      "rasa": ["Sweet"],
-      "guna": ["Light", "Oily"],
+      "rasa": [
+        "Sweet"
+      ],
+      "guna": [
+        "Light",
+        "Oily"
+      ],
       "virya": "Heating",
       "digestibility": "Easy",
-      "suitableFor": ["Child", "Adult", "Elderly"]
-    }
+      "suitableFor": [
+        "Child",
+        "Adult",
+        "Elderly"
+      ]
+    },
+    "dietType": "Vegetarian",
+    "nameHindi": "गाजरs (Gajar)"
   },
   {
     "id": 8,
@@ -215,7 +307,9 @@
     "calories": 18,
     "servingSize": "100g raw",
     "region": "Pan-Indian",
-    "season": ["All"],
+    "season": [
+      "All"
+    ],
     "nutrition": {
       "calories": 18,
       "protein": 0.9,
@@ -232,12 +326,22 @@
       "glycemicIndex": 38
     },
     "ayurvedic": {
-      "rasa": ["Sour", "Sweet"],
-      "guna": ["Light", "Oily"],
+      "rasa": [
+        "Sour",
+        "Sweet"
+      ],
+      "guna": [
+        "Light",
+        "Oily"
+      ],
       "virya": "Heating",
       "digestibility": "Easy",
-      "suitableFor": ["Adult"]
-    }
+      "suitableFor": [
+        "Adult"
+      ]
+    },
+    "dietType": "Vegetarian",
+    "nameHindi": "टमाटर"
   },
   {
     "id": 9,
@@ -246,7 +350,9 @@
     "calories": 33,
     "servingSize": "100g cooked",
     "region": "Pan-Indian",
-    "season": ["Summer"],
+    "season": [
+      "Summer"
+    ],
     "nutrition": {
       "calories": 33,
       "protein": 1.9,
@@ -259,16 +365,25 @@
       "magnesium": 57,
       "potassium": 299,
       "vitaminA": 36,
-      "vitaminC": 23.0,
+      "vitaminC": 23,
       "glycemicIndex": 20
     },
     "ayurvedic": {
-      "rasa": ["Sweet"],
-      "guna": ["Heavy", "Oily"],
+      "rasa": [
+        "Sweet"
+      ],
+      "guna": [
+        "Heavy",
+        "Oily"
+      ],
       "virya": "Heating",
       "digestibility": "Moderate",
-      "suitableFor": ["Adult"]
-    }
+      "suitableFor": [
+        "Adult"
+      ]
+    },
+    "dietType": "Vegetarian",
+    "nameHindi": "भिंडी (Bhindi)"
   },
   {
     "id": 10,
@@ -277,7 +392,9 @@
     "calories": 16,
     "servingSize": "100g raw",
     "region": "Pan-Indian",
-    "season": ["Summer"],
+    "season": [
+      "Summer"
+    ],
     "nutrition": {
       "calories": 16,
       "protein": 0.7,
@@ -293,12 +410,23 @@
       "glycemicIndex": 15
     },
     "ayurvedic": {
-      "rasa": ["Sweet", "Astringent"],
-      "guna": ["Light", "Dry"],
+      "rasa": [
+        "Sweet",
+        "Astringent"
+      ],
+      "guna": [
+        "Light",
+        "Dry"
+      ],
       "virya": "Cooling",
       "digestibility": "Easy",
-      "suitableFor": ["Adult", "Elderly"]
-    }
+      "suitableFor": [
+        "Adult",
+        "Elderly"
+      ]
+    },
+    "dietType": "Vegetarian",
+    "nameHindi": "खीरा (Kheera)"
   },
   {
     "id": 11,
@@ -307,28 +435,40 @@
     "calories": 17,
     "servingSize": "100g cooked",
     "region": "Pan-Indian",
-    "season": ["Summer"],
+    "season": [
+      "Summer"
+    ],
     "nutrition": {
       "calories": 17,
-      "protein": 1.0,
+      "protein": 1,
       "carbohydrates": 3.7,
       "fats": 0.2,
       "fiber": 2.8,
-      "sugar": 0.0,
+      "sugar": 0,
       "iron": 0.4,
       "calcium": 19,
       "magnesium": 17,
       "potassium": 296,
-      "vitaminC": 84.0,
+      "vitaminC": 84,
       "glycemicIndex": 18
     },
     "ayurvedic": {
-      "rasa": ["Bitter", "Pungent"],
-      "guna": ["Light", "Dry"],
+      "rasa": [
+        "Bitter",
+        "Pungent"
+      ],
+      "guna": [
+        "Light",
+        "Dry"
+      ],
       "virya": "Heating",
       "digestibility": "Easy",
-      "suitableFor": ["Adult"]
-    }
+      "suitableFor": [
+        "Adult"
+      ]
+    },
+    "dietType": "Vegetarian",
+    "nameHindi": "करेला (Karela)"
   },
   {
     "id": 12,
@@ -337,28 +477,41 @@
     "calories": 20,
     "servingSize": "100g cooked",
     "region": "Pan-Indian",
-    "season": ["Monsoon"],
+    "season": [
+      "Monsoon"
+    ],
     "nutrition": {
       "calories": 20,
       "protein": 1.2,
       "carbohydrates": 4.4,
       "fats": 0.2,
       "fiber": 1.1,
-      "sugar": 0.0,
+      "sugar": 0,
       "iron": 0.4,
       "calcium": 18,
       "magnesium": 14,
       "potassium": 139,
-      "vitaminC": 18.0,
+      "vitaminC": 18,
       "glycemicIndex": 15
     },
     "ayurvedic": {
-      "rasa": ["Sweet"],
-      "guna": ["Light", "Dry"],
+      "rasa": [
+        "Sweet"
+      ],
+      "guna": [
+        "Light",
+        "Dry"
+      ],
       "virya": "Cooling",
       "digestibility": "Easy",
-      "suitableFor": ["Child", "Adult", "Elderly"]
-    }
+      "suitableFor": [
+        "Child",
+        "Adult",
+        "Elderly"
+      ]
+    },
+    "dietType": "Vegetarian",
+    "nameHindi": "तोरी (Turai)"
   },
   {
     "id": 13,
@@ -367,29 +520,41 @@
     "calories": 37,
     "servingSize": "100g cooked",
     "region": "South Indian",
-    "season": ["All"],
+    "season": [
+      "All"
+    ],
     "nutrition": {
       "calories": 37,
       "protein": 2.1,
       "carbohydrates": 8.5,
       "fats": 0.2,
       "fiber": 3.2,
-      "sugar": 0.0,
+      "sugar": 0,
       "iron": 0.4,
       "calcium": 30,
       "magnesium": 45,
       "potassium": 461,
       "vitaminA": 74,
-      "vitaminC": 141.0,
+      "vitaminC": 141,
       "glycemicIndex": 20
     },
     "ayurvedic": {
-      "rasa": ["Pungent", "Bitter"],
-      "guna": ["Light", "Dry"],
+      "rasa": [
+        "Pungent",
+        "Bitter"
+      ],
+      "guna": [
+        "Light",
+        "Dry"
+      ],
       "virya": "Heating",
       "digestibility": "Easy",
-      "suitableFor": ["Adult", "Elderly"]
-    }
+      "suitableFor": [
+        "Adult",
+        "Elderly"
+      ]
+    },
+    "dietType": "Vegetarian"
   },
   {
     "id": 14,
@@ -398,13 +563,15 @@
     "calories": 343,
     "servingSize": "100g dry",
     "region": "Pan-Indian",
-    "season": ["All"],
+    "season": [
+      "All"
+    ],
     "nutrition": {
       "calories": 343,
       "protein": 22.3,
       "carbohydrates": 62.8,
       "fats": 1.5,
-      "fiber": 15.0,
+      "fiber": 15,
       "sugar": 2.6,
       "iron": 5.2,
       "calcium": 130,
@@ -413,12 +580,23 @@
       "glycemicIndex": 29
     },
     "ayurvedic": {
-      "rasa": ["Sweet", "Astringent"],
-      "guna": ["Light", "Dry"],
+      "rasa": [
+        "Sweet",
+        "Astringent"
+      ],
+      "guna": [
+        "Light",
+        "Dry"
+      ],
       "virya": "Heating",
       "digestibility": "Easy",
-      "suitableFor": ["Adult", "Elderly"]
-    }
+      "suitableFor": [
+        "Adult",
+        "Elderly"
+      ]
+    },
+    "dietType": "Vegetarian",
+    "nameHindi": "Toor दाल (Pigeon Pea)"
   },
   {
     "id": 15,
@@ -427,10 +605,12 @@
     "calories": 116,
     "servingSize": "100g cooked",
     "region": "Pan-Indian",
-    "season": ["All"],
+    "season": [
+      "All"
+    ],
     "nutrition": {
       "calories": 116,
-      "protein": 9.0,
+      "protein": 9,
       "carbohydrates": 20.1,
       "fats": 0.4,
       "fiber": 7.9,
@@ -442,12 +622,23 @@
       "glycemicIndex": 26
     },
     "ayurvedic": {
-      "rasa": ["Sweet", "Astringent"],
-      "guna": ["Light", "Dry"],
+      "rasa": [
+        "Sweet",
+        "Astringent"
+      ],
+      "guna": [
+        "Light",
+        "Dry"
+      ],
       "virya": "Heating",
       "digestibility": "Easy",
-      "suitableFor": ["Adult", "Elderly"]
-    }
+      "suitableFor": [
+        "Adult",
+        "Elderly"
+      ]
+    },
+    "dietType": "Vegetarian",
+    "nameHindi": "Masoor दाल (Red Lentil)"
   },
   {
     "id": 16,
@@ -456,14 +647,16 @@
     "calories": 341,
     "servingSize": "100g dry",
     "region": "South Indian",
-    "season": ["All"],
+    "season": [
+      "All"
+    ],
     "nutrition": {
       "calories": 341,
       "protein": 25.2,
       "carbohydrates": 58.9,
       "fats": 1.6,
       "fiber": 18.3,
-      "sugar": 0.0,
+      "sugar": 0,
       "iron": 7.6,
       "calcium": 154,
       "magnesium": 267,
@@ -471,12 +664,21 @@
       "glycemicIndex": 43
     },
     "ayurvedic": {
-      "rasa": ["Sweet"],
-      "guna": ["Heavy", "Oily"],
+      "rasa": [
+        "Sweet"
+      ],
+      "guna": [
+        "Heavy",
+        "Oily"
+      ],
       "virya": "Heating",
       "digestibility": "Difficult",
-      "suitableFor": ["Adult"]
-    }
+      "suitableFor": [
+        "Adult"
+      ]
+    },
+    "dietType": "Vegetarian",
+    "nameHindi": "Urad दाल (Black Gram)"
   },
   {
     "id": 17,
@@ -485,14 +687,16 @@
     "calories": 364,
     "servingSize": "100g dry",
     "region": "North Indian",
-    "season": ["All"],
+    "season": [
+      "All"
+    ],
     "nutrition": {
       "calories": 364,
-      "protein": 22.0,
+      "protein": 22,
       "carbohydrates": 60.9,
-      "fats": 6.0,
-      "fiber": 11.0,
-      "sugar": 11.0,
+      "fats": 6,
+      "fiber": 11,
+      "sugar": 11,
       "iron": 4.6,
       "calcium": 45,
       "magnesium": 115,
@@ -500,12 +704,22 @@
       "glycemicIndex": 28
     },
     "ayurvedic": {
-      "rasa": ["Sweet", "Astringent"],
-      "guna": ["Light", "Dry"],
+      "rasa": [
+        "Sweet",
+        "Astringent"
+      ],
+      "guna": [
+        "Light",
+        "Dry"
+      ],
       "virya": "Heating",
       "digestibility": "Moderate",
-      "suitableFor": ["Adult"]
-    }
+      "suitableFor": [
+        "Adult"
+      ]
+    },
+    "dietType": "Vegetarian",
+    "nameHindi": "Chana दाल (Bengal Gram)"
   },
   {
     "id": 18,
@@ -514,7 +728,9 @@
     "calories": 127,
     "servingSize": "100g cooked",
     "region": "North Indian",
-    "season": ["All"],
+    "season": [
+      "All"
+    ],
     "nutrition": {
       "calories": 127,
       "protein": 8.7,
@@ -529,12 +745,22 @@
       "glycemicIndex": 24
     },
     "ayurvedic": {
-      "rasa": ["Sweet", "Astringent"],
-      "guna": ["Heavy", "Dry"],
+      "rasa": [
+        "Sweet",
+        "Astringent"
+      ],
+      "guna": [
+        "Heavy",
+        "Dry"
+      ],
       "virya": "Heating",
       "digestibility": "Difficult",
-      "suitableFor": ["Adult"]
-    }
+      "suitableFor": [
+        "Adult"
+      ]
+    },
+    "dietType": "Vegetarian",
+    "nameHindi": "Rajma (राजमाs)"
   },
   {
     "id": 19,
@@ -543,28 +769,40 @@
     "calories": 61,
     "servingSize": "100g",
     "region": "Pan-Indian",
-    "season": ["All"],
+    "season": [
+      "All"
+    ],
     "nutrition": {
       "calories": 61,
       "protein": 3.5,
       "carbohydrates": 4.7,
       "fats": 3.3,
-      "fiber": 0.0,
+      "fiber": 0,
       "sugar": 4.7,
       "calcium": 121,
       "magnesium": 12,
       "potassium": 155,
       "vitaminB12": 0.4,
-      "vitaminD": 0.0,
+      "vitaminD": 0,
       "glycemicIndex": 36
     },
     "ayurvedic": {
-      "rasa": ["Sour", "Sweet"],
-      "guna": ["Heavy", "Oily"],
+      "rasa": [
+        "Sour",
+        "Sweet"
+      ],
+      "guna": [
+        "Heavy",
+        "Oily"
+      ],
       "virya": "Heating",
       "digestibility": "Moderate",
-      "suitableFor": ["Adult"]
-    }
+      "suitableFor": [
+        "Adult"
+      ]
+    },
+    "dietType": "Vegetarian",
+    "nameHindi": "Yogurt (दही)"
   },
   {
     "id": 20,
@@ -573,13 +811,15 @@
     "calories": 265,
     "servingSize": "100g",
     "region": "North Indian",
-    "season": ["All"],
+    "season": [
+      "All"
+    ],
     "nutrition": {
       "calories": 265,
       "protein": 18.3,
       "carbohydrates": 1.2,
       "fats": 20.8,
-      "fiber": 0.0,
+      "fiber": 0,
       "sugar": 1.2,
       "calcium": 208,
       "magnesium": 8,
@@ -588,12 +828,21 @@
       "glycemicIndex": 27
     },
     "ayurvedic": {
-      "rasa": ["Sweet"],
-      "guna": ["Heavy", "Oily"],
+      "rasa": [
+        "Sweet"
+      ],
+      "guna": [
+        "Heavy",
+        "Oily"
+      ],
       "virya": "Cooling",
       "digestibility": "Difficult",
-      "suitableFor": ["Adult"]
-    }
+      "suitableFor": [
+        "Adult"
+      ]
+    },
+    "dietType": "Vegetarian",
+    "nameHindi": "पनीर (Cottage Cheese)"
   },
   {
     "id": 21,
@@ -602,13 +851,15 @@
     "calories": 61,
     "servingSize": "100ml",
     "region": "Pan-Indian",
-    "season": ["All"],
+    "season": [
+      "All"
+    ],
     "nutrition": {
       "calories": 61,
       "protein": 3.2,
       "carbohydrates": 4.8,
       "fats": 3.3,
-      "fiber": 0.0,
+      "fiber": 0,
       "sugar": 5.1,
       "calcium": 113,
       "magnesium": 10,
@@ -618,12 +869,23 @@
       "glycemicIndex": 39
     },
     "ayurvedic": {
-      "rasa": ["Sweet"],
-      "guna": ["Heavy", "Oily"],
+      "rasa": [
+        "Sweet"
+      ],
+      "guna": [
+        "Heavy",
+        "Oily"
+      ],
       "virya": "Cooling",
       "digestibility": "Moderate",
-      "suitableFor": ["Child", "Adult", "Elderly"]
-    }
+      "suitableFor": [
+        "Child",
+        "Adult",
+        "Elderly"
+      ]
+    },
+    "dietType": "Vegetarian",
+    "nameHindi": "दूध (Whole)"
   },
   {
     "id": 22,
@@ -632,25 +894,38 @@
     "calories": 900,
     "servingSize": "100g",
     "region": "Pan-Indian",
-    "season": ["All"],
+    "season": [
+      "All"
+    ],
     "nutrition": {
       "calories": 900,
-      "protein": 0.0,
-      "carbohydrates": 0.0,
-      "fats": 100.0,
-      "fiber": 0.0,
-      "sugar": 0.0,
+      "protein": 0,
+      "carbohydrates": 0,
+      "fats": 100,
+      "fiber": 0,
+      "sugar": 0,
       "vitaminA": 900,
       "vitaminD": 0.3,
       "glycemicIndex": 0
     },
     "ayurvedic": {
-      "rasa": ["Sweet"],
-      "guna": ["Oily", "Smooth"],
+      "rasa": [
+        "Sweet"
+      ],
+      "guna": [
+        "Oily",
+        "Smooth"
+      ],
       "virya": "Cooling",
       "digestibility": "Easy",
-      "suitableFor": ["Child", "Adult", "Elderly"]
-    }
+      "suitableFor": [
+        "Child",
+        "Adult",
+        "Elderly"
+      ]
+    },
+    "dietType": "Vegetarian",
+    "nameHindi": "घी (Clarified Butter)"
   },
   {
     "id": 23,
@@ -659,7 +934,9 @@
     "calories": 89,
     "servingSize": "1 medium",
     "region": "South Indian",
-    "season": ["All"],
+    "season": [
+      "All"
+    ],
     "nutrition": {
       "calories": 89,
       "protein": 1.1,
@@ -675,12 +952,24 @@
       "glycemicIndex": 51
     },
     "ayurvedic": {
-      "rasa": ["Sweet", "Astringent"],
-      "guna": ["Heavy", "Oily"],
+      "rasa": [
+        "Sweet",
+        "Astringent"
+      ],
+      "guna": [
+        "Heavy",
+        "Oily"
+      ],
       "virya": "Cooling",
       "digestibility": "Easy",
-      "suitableFor": ["Child", "Adult", "Elderly"]
-    }
+      "suitableFor": [
+        "Child",
+        "Adult",
+        "Elderly"
+      ]
+    },
+    "dietType": "Vegetarian",
+    "nameHindi": "केला"
   },
   {
     "id": 24,
@@ -689,11 +978,13 @@
     "calories": 60,
     "servingSize": "100g",
     "region": "Pan-Indian",
-    "season": ["Summer"],
+    "season": [
+      "Summer"
+    ],
     "nutrition": {
       "calories": 60,
       "protein": 0.8,
-      "carbohydrates": 15.0,
+      "carbohydrates": 15,
       "fats": 0.4,
       "fiber": 1.6,
       "sugar": 13.7,
@@ -706,12 +997,22 @@
       "glycemicIndex": 51
     },
     "ayurvedic": {
-      "rasa": ["Sweet", "Sour"],
-      "guna": ["Heavy", "Oily"],
+      "rasa": [
+        "Sweet",
+        "Sour"
+      ],
+      "guna": [
+        "Heavy",
+        "Oily"
+      ],
       "virya": "Heating",
       "digestibility": "Moderate",
-      "suitableFor": ["Adult"]
-    }
+      "suitableFor": [
+        "Adult"
+      ]
+    },
+    "dietType": "Vegetarian",
+    "nameHindi": "आम"
   },
   {
     "id": 25,
@@ -720,11 +1021,13 @@
     "calories": 43,
     "servingSize": "100g",
     "region": "Pan-Indian",
-    "season": ["All"],
+    "season": [
+      "All"
+    ],
     "nutrition": {
       "calories": 43,
       "protein": 0.5,
-      "carbohydrates": 11.0,
+      "carbohydrates": 11,
       "fats": 0.3,
       "fiber": 1.7,
       "sugar": 7.8,
@@ -737,12 +1040,23 @@
       "glycemicIndex": 60
     },
     "ayurvedic": {
-      "rasa": ["Sweet"],
-      "guna": ["Light", "Oily"],
+      "rasa": [
+        "Sweet"
+      ],
+      "guna": [
+        "Light",
+        "Oily"
+      ],
       "virya": "Heating",
       "digestibility": "Easy",
-      "suitableFor": ["Child", "Adult", "Elderly"]
-    }
+      "suitableFor": [
+        "Child",
+        "Adult",
+        "Elderly"
+      ]
+    },
+    "dietType": "Vegetarian",
+    "nameHindi": "पपीता"
   },
   {
     "id": 26,
@@ -751,13 +1065,15 @@
     "calories": 83,
     "servingSize": "100g",
     "region": "North Indian",
-    "season": ["Winter"],
+    "season": [
+      "Winter"
+    ],
     "nutrition": {
       "calories": 83,
       "protein": 1.7,
       "carbohydrates": 18.7,
       "fats": 1.2,
-      "fiber": 4.0,
+      "fiber": 4,
       "sugar": 13.7,
       "iron": 0.3,
       "calcium": 10,
@@ -767,12 +1083,24 @@
       "glycemicIndex": 53
     },
     "ayurvedic": {
-      "rasa": ["Sweet", "Sour", "Astringent"],
-      "guna": ["Light", "Dry"],
+      "rasa": [
+        "Sweet",
+        "Sour",
+        "Astringent"
+      ],
+      "guna": [
+        "Light",
+        "Dry"
+      ],
       "virya": "Cooling",
       "digestibility": "Easy",
-      "suitableFor": ["Adult", "Elderly"]
-    }
+      "suitableFor": [
+        "Adult",
+        "Elderly"
+      ]
+    },
+    "dietType": "Vegetarian",
+    "nameHindi": "अनार"
   },
   {
     "id": 27,
@@ -781,11 +1109,13 @@
     "calories": 52,
     "servingSize": "1 medium",
     "region": "Pan-Indian",
-    "season": ["All"],
+    "season": [
+      "All"
+    ],
     "nutrition": {
       "calories": 52,
       "protein": 0.3,
-      "carbohydrates": 14.0,
+      "carbohydrates": 14,
       "fats": 0.2,
       "fiber": 2.4,
       "sugar": 10.4,
@@ -797,12 +1127,24 @@
       "glycemicIndex": 36
     },
     "ayurvedic": {
-      "rasa": ["Sweet", "Astringent"],
-      "guna": ["Heavy", "Dry"],
+      "rasa": [
+        "Sweet",
+        "Astringent"
+      ],
+      "guna": [
+        "Heavy",
+        "Dry"
+      ],
       "virya": "Cooling",
       "digestibility": "Easy",
-      "suitableFor": ["Child", "Adult", "Elderly"]
-    }
+      "suitableFor": [
+        "Child",
+        "Adult",
+        "Elderly"
+      ]
+    },
+    "dietType": "Vegetarian",
+    "nameHindi": "सेब"
   },
   {
     "id": 28,
@@ -811,13 +1153,15 @@
     "calories": 354,
     "servingSize": "100g",
     "region": "South Indian",
-    "season": ["All"],
+    "season": [
+      "All"
+    ],
     "nutrition": {
       "calories": 354,
       "protein": 3.3,
       "carbohydrates": 15.2,
       "fats": 33.5,
-      "fiber": 9.0,
+      "fiber": 9,
       "sugar": 6.2,
       "iron": 2.4,
       "calcium": 14,
@@ -826,12 +1170,21 @@
       "glycemicIndex": 45
     },
     "ayurvedic": {
-      "rasa": ["Sweet"],
-      "guna": ["Heavy", "Oily"],
+      "rasa": [
+        "Sweet"
+      ],
+      "guna": [
+        "Heavy",
+        "Oily"
+      ],
       "virya": "Cooling",
       "digestibility": "Moderate",
-      "suitableFor": ["Adult"]
-    }
+      "suitableFor": [
+        "Adult"
+      ]
+    },
+    "dietType": "Vegetarian",
+    "nameHindi": "नारियल (Fresh)"
   },
   {
     "id": 29,
@@ -840,27 +1193,38 @@
     "calories": 282,
     "servingSize": "100g",
     "region": "Pan-Indian",
-    "season": ["All"],
+    "season": [
+      "All"
+    ],
     "nutrition": {
       "calories": 282,
       "protein": 2.5,
-      "carbohydrates": 75.0,
+      "carbohydrates": 75,
       "fats": 0.4,
-      "fiber": 8.0,
-      "sugar": 63.0,
-      "iron": 1.0,
+      "fiber": 8,
+      "sugar": 63,
+      "iron": 1,
       "calcium": 39,
       "magnesium": 43,
       "potassium": 656,
       "glycemicIndex": 42
     },
     "ayurvedic": {
-      "rasa": ["Sweet"],
-      "guna": ["Heavy", "Oily"],
+      "rasa": [
+        "Sweet"
+      ],
+      "guna": [
+        "Heavy",
+        "Oily"
+      ],
       "virya": "Heating",
       "digestibility": "Moderate",
-      "suitableFor": ["Adult", "Elderly"]
-    }
+      "suitableFor": [
+        "Adult",
+        "Elderly"
+      ]
+    },
+    "dietType": "Vegetarian"
   },
   {
     "id": 30,
@@ -869,7 +1233,9 @@
     "calories": 579,
     "servingSize": "100g",
     "region": "Pan-Indian",
-    "season": ["All"],
+    "season": [
+      "All"
+    ],
     "nutrition": {
       "calories": 579,
       "protein": 21.2,
@@ -885,12 +1251,21 @@
       "glycemicIndex": 0
     },
     "ayurvedic": {
-      "rasa": ["Sweet"],
-      "guna": ["Heavy", "Oily"],
+      "rasa": [
+        "Sweet"
+      ],
+      "guna": [
+        "Heavy",
+        "Oily"
+      ],
       "virya": "Heating",
       "digestibility": "Difficult",
-      "suitableFor": ["Adult"]
-    }
+      "suitableFor": [
+        "Adult"
+      ]
+    },
+    "dietType": "Vegetarian",
+    "nameHindi": "बादामs (Badam)"
   },
   {
     "id": 31,
@@ -899,7 +1274,9 @@
     "calories": 553,
     "servingSize": "100g",
     "region": "South Indian",
-    "season": ["All"],
+    "season": [
+      "All"
+    ],
     "nutrition": {
       "calories": 553,
       "protein": 18.2,
@@ -915,12 +1292,21 @@
       "glycemicIndex": 25
     },
     "ayurvedic": {
-      "rasa": ["Sweet"],
-      "guna": ["Heavy", "Oily"],
+      "rasa": [
+        "Sweet"
+      ],
+      "guna": [
+        "Heavy",
+        "Oily"
+      ],
       "virya": "Heating",
       "digestibility": "Difficult",
-      "suitableFor": ["Adult"]
-    }
+      "suitableFor": [
+        "Adult"
+      ]
+    },
+    "dietType": "Vegetarian",
+    "nameHindi": "काजूs (Kaju)"
   },
   {
     "id": 32,
@@ -929,7 +1315,9 @@
     "calories": 654,
     "servingSize": "100g",
     "region": "North Indian",
-    "season": ["Winter"],
+    "season": [
+      "Winter"
+    ],
     "nutrition": {
       "calories": 654,
       "protein": 15.2,
@@ -944,12 +1332,22 @@
       "glycemicIndex": 15
     },
     "ayurvedic": {
-      "rasa": ["Sweet", "Astringent"],
-      "guna": ["Heavy", "Oily"],
+      "rasa": [
+        "Sweet",
+        "Astringent"
+      ],
+      "guna": [
+        "Heavy",
+        "Oily"
+      ],
       "virya": "Heating",
       "digestibility": "Difficult",
-      "suitableFor": ["Adult"]
-    }
+      "suitableFor": [
+        "Adult"
+      ]
+    },
+    "dietType": "Vegetarian",
+    "nameHindi": "अखरोटs (Akhrot)"
   },
   {
     "id": 33,
@@ -958,7 +1356,9 @@
     "calories": 567,
     "servingSize": "100g",
     "region": "Pan-Indian",
-    "season": ["All"],
+    "season": [
+      "All"
+    ],
     "nutrition": {
       "calories": 567,
       "protein": 25.8,
@@ -973,12 +1373,21 @@
       "glycemicIndex": 14
     },
     "ayurvedic": {
-      "rasa": ["Sweet"],
-      "guna": ["Heavy", "Oily"],
+      "rasa": [
+        "Sweet"
+      ],
+      "guna": [
+        "Heavy",
+        "Oily"
+      ],
       "virya": "Heating",
       "digestibility": "Difficult",
-      "suitableFor": ["Adult"]
-    }
+      "suitableFor": [
+        "Adult"
+      ]
+    },
+    "dietType": "Vegetarian",
+    "nameHindi": "मूंगफलीs (Moongfali)"
   },
   {
     "id": 34,
@@ -987,29 +1396,40 @@
     "calories": 165,
     "servingSize": "100g cooked",
     "region": "Pan-Indian",
-    "season": ["All"],
+    "season": [
+      "All"
+    ],
     "nutrition": {
       "calories": 165,
-      "protein": 31.0,
-      "carbohydrates": 0.0,
+      "protein": 31,
+      "carbohydrates": 0,
       "fats": 3.6,
-      "fiber": 0.0,
-      "sugar": 0.0,
+      "fiber": 0,
+      "sugar": 0,
       "iron": 0.9,
       "calcium": 15,
       "magnesium": 29,
       "potassium": 256,
       "vitaminB12": 0.3,
-      "zinc": 1.0,
+      "zinc": 1,
       "glycemicIndex": 0
     },
     "ayurvedic": {
-      "rasa": ["Sweet"],
-      "guna": ["Heavy", "Dry"],
+      "rasa": [
+        "Sweet"
+      ],
+      "guna": [
+        "Heavy",
+        "Dry"
+      ],
       "virya": "Heating",
       "digestibility": "Difficult",
-      "suitableFor": ["Adult"]
-    }
+      "suitableFor": [
+        "Adult"
+      ]
+    },
+    "dietType": "Non-Vegetarian",
+    "nameHindi": "मुर्गा Breast"
   },
   {
     "id": 35,
@@ -1018,13 +1438,15 @@
     "calories": 155,
     "servingSize": "100g",
     "region": "Pan-Indian",
-    "season": ["All"],
+    "season": [
+      "All"
+    ],
     "nutrition": {
       "calories": 155,
       "protein": 12.6,
       "carbohydrates": 1.1,
       "fats": 10.6,
-      "fiber": 0.0,
+      "fiber": 0,
       "sugar": 1.1,
       "iron": 1.2,
       "calcium": 50,
@@ -1032,16 +1454,25 @@
       "potassium": 126,
       "vitaminA": 149,
       "vitaminB12": 0.9,
-      "vitaminD": 2.0,
+      "vitaminD": 2,
       "glycemicIndex": 0
     },
     "ayurvedic": {
-      "rasa": ["Sweet"],
-      "guna": ["Heavy", "Oily"],
+      "rasa": [
+        "Sweet"
+      ],
+      "guna": [
+        "Heavy",
+        "Oily"
+      ],
       "virya": "Heating",
       "digestibility": "Moderate",
-      "suitableFor": ["Adult"]
-    }
+      "suitableFor": [
+        "Adult"
+      ]
+    },
+    "dietType": "Eggetarian",
+    "nameHindi": "अंडाs (Boiled)"
   },
   {
     "id": 36,
@@ -1050,29 +1481,40 @@
     "calories": 97,
     "servingSize": "100g cooked",
     "region": "Eastern Indian",
-    "season": ["All"],
+    "season": [
+      "All"
+    ],
     "nutrition": {
       "calories": 97,
       "protein": 17.6,
-      "carbohydrates": 0.0,
+      "carbohydrates": 0,
       "fats": 2.6,
-      "fiber": 0.0,
-      "sugar": 0.0,
+      "fiber": 0,
+      "sugar": 0,
       "iron": 0.7,
       "calcium": 50,
       "magnesium": 25,
       "potassium": 302,
-      "vitaminB12": 2.0,
+      "vitaminB12": 2,
       "vitaminD": 6.3,
       "glycemicIndex": 0
     },
     "ayurvedic": {
-      "rasa": ["Sweet"],
-      "guna": ["Heavy", "Oily"],
+      "rasa": [
+        "Sweet"
+      ],
+      "guna": [
+        "Heavy",
+        "Oily"
+      ],
       "virya": "Heating",
       "digestibility": "Moderate",
-      "suitableFor": ["Adult"]
-    }
+      "suitableFor": [
+        "Adult"
+      ]
+    },
+    "dietType": "Non-Vegetarian",
+    "nameHindi": "मछली (Rohu)"
   },
   {
     "id": 37,
@@ -1081,28 +1523,42 @@
     "calories": 80,
     "servingSize": "100g fresh",
     "region": "Pan-Indian",
-    "season": ["All"],
+    "season": [
+      "All"
+    ],
     "nutrition": {
       "calories": 80,
       "protein": 1.8,
       "carbohydrates": 17.8,
       "fats": 0.8,
-      "fiber": 2.0,
+      "fiber": 2,
       "sugar": 1.7,
       "iron": 0.6,
       "calcium": 16,
       "magnesium": 43,
       "potassium": 415,
-      "vitaminC": 5.0,
+      "vitaminC": 5,
       "glycemicIndex": 15
     },
     "ayurvedic": {
-      "rasa": ["Pungent", "Sweet"],
-      "guna": ["Light", "Oily"],
+      "rasa": [
+        "Pungent",
+        "Sweet"
+      ],
+      "guna": [
+        "Light",
+        "Oily"
+      ],
       "virya": "Heating",
       "digestibility": "Easy",
-      "suitableFor": ["Child", "Adult", "Elderly"]
-    }
+      "suitableFor": [
+        "Child",
+        "Adult",
+        "Elderly"
+      ]
+    },
+    "dietType": "Vegetarian",
+    "nameHindi": "अदरक (Adrak)"
   },
   {
     "id": 38,
@@ -1111,7 +1567,9 @@
     "calories": 312,
     "servingSize": "100g powder",
     "region": "Pan-Indian",
-    "season": ["All"],
+    "season": [
+      "All"
+    ],
     "nutrition": {
       "calories": 312,
       "protein": 9.7,
@@ -1119,19 +1577,31 @@
       "fats": 3.3,
       "fiber": 22.7,
       "sugar": 3.2,
-      "iron": 55.0,
+      "iron": 55,
       "calcium": 168,
       "magnesium": 208,
       "potassium": 2080,
       "glycemicIndex": 0
     },
     "ayurvedic": {
-      "rasa": ["Bitter", "Pungent"],
-      "guna": ["Light", "Dry"],
+      "rasa": [
+        "Bitter",
+        "Pungent"
+      ],
+      "guna": [
+        "Light",
+        "Dry"
+      ],
       "virya": "Heating",
       "digestibility": "Easy",
-      "suitableFor": ["Child", "Adult", "Elderly"]
-    }
+      "suitableFor": [
+        "Child",
+        "Adult",
+        "Elderly"
+      ]
+    },
+    "dietType": "Vegetarian",
+    "nameHindi": "हल्दी (Haldi)"
   },
   {
     "id": 39,
@@ -1140,7 +1610,9 @@
     "calories": 375,
     "servingSize": "100g",
     "region": "Pan-Indian",
-    "season": ["All"],
+    "season": [
+      "All"
+    ],
     "nutrition": {
       "calories": 375,
       "protein": 17.8,
@@ -1155,12 +1627,23 @@
       "glycemicIndex": 0
     },
     "ayurvedic": {
-      "rasa": ["Pungent", "Bitter"],
-      "guna": ["Light", "Dry"],
+      "rasa": [
+        "Pungent",
+        "Bitter"
+      ],
+      "guna": [
+        "Light",
+        "Dry"
+      ],
       "virya": "Cooling",
       "digestibility": "Easy",
-      "suitableFor": ["Adult", "Elderly"]
-    }
+      "suitableFor": [
+        "Adult",
+        "Elderly"
+      ]
+    },
+    "dietType": "Vegetarian",
+    "nameHindi": "जीरा (Jeera)"
   },
   {
     "id": 40,
@@ -1169,14 +1652,16 @@
     "calories": 298,
     "servingSize": "100g",
     "region": "Pan-Indian",
-    "season": ["All"],
+    "season": [
+      "All"
+    ],
     "nutrition": {
       "calories": 298,
       "protein": 12.4,
       "carbohydrates": 54.9,
       "fats": 17.8,
       "fiber": 41.9,
-      "sugar": 0.0,
+      "sugar": 0,
       "iron": 16.3,
       "calcium": 709,
       "magnesium": 330,
@@ -1184,12 +1669,24 @@
       "glycemicIndex": 0
     },
     "ayurvedic": {
-      "rasa": ["Sweet", "Pungent", "Bitter"],
-      "guna": ["Light", "Oily"],
+      "rasa": [
+        "Sweet",
+        "Pungent",
+        "Bitter"
+      ],
+      "guna": [
+        "Light",
+        "Oily"
+      ],
       "virya": "Cooling",
       "digestibility": "Easy",
-      "suitableFor": ["Adult", "Elderly"]
-    }
+      "suitableFor": [
+        "Adult",
+        "Elderly"
+      ]
+    },
+    "dietType": "Vegetarian",
+    "nameHindi": "धनिया Seeds (Dhania)"
   },
   {
     "id": 41,
@@ -1198,14 +1695,16 @@
     "calories": 323,
     "servingSize": "100g seeds",
     "region": "Pan-Indian",
-    "season": ["All"],
+    "season": [
+      "All"
+    ],
     "nutrition": {
       "calories": 323,
-      "protein": 23.0,
+      "protein": 23,
       "carbohydrates": 58.4,
       "fats": 6.4,
       "fiber": 24.6,
-      "sugar": 0.0,
+      "sugar": 0,
       "iron": 33.5,
       "calcium": 176,
       "magnesium": 191,
@@ -1213,12 +1712,23 @@
       "glycemicIndex": 0
     },
     "ayurvedic": {
-      "rasa": ["Bitter", "Pungent"],
-      "guna": ["Light", "Dry"],
+      "rasa": [
+        "Bitter",
+        "Pungent"
+      ],
+      "guna": [
+        "Light",
+        "Dry"
+      ],
       "virya": "Heating",
       "digestibility": "Easy",
-      "suitableFor": ["Adult", "Elderly"]
-    }
+      "suitableFor": [
+        "Adult",
+        "Elderly"
+      ]
+    },
+    "dietType": "Vegetarian",
+    "nameHindi": "मेथी (Methi)"
   },
   {
     "id": 42,
@@ -1227,7 +1737,9 @@
     "calories": 120,
     "servingSize": "100g cooked",
     "region": "Modern Indian",
-    "season": ["All"],
+    "season": [
+      "All"
+    ],
     "nutrition": {
       "calories": 120,
       "protein": 4.4,
@@ -1242,12 +1754,22 @@
       "glycemicIndex": 53
     },
     "ayurvedic": {
-      "rasa": ["Sweet", "Astringent"],
-      "guna": ["Light", "Dry"],
+      "rasa": [
+        "Sweet",
+        "Astringent"
+      ],
+      "guna": [
+        "Light",
+        "Dry"
+      ],
       "virya": "Heating",
       "digestibility": "Easy",
-      "suitableFor": ["Adult", "Elderly"]
-    }
+      "suitableFor": [
+        "Adult",
+        "Elderly"
+      ]
+    },
+    "dietType": "Vegetarian"
   },
   {
     "id": 43,
@@ -1256,14 +1778,16 @@
     "calories": 71,
     "servingSize": "100g cooked",
     "region": "Pan-Indian",
-    "season": ["All"],
+    "season": [
+      "All"
+    ],
     "nutrition": {
       "calories": 71,
       "protein": 2.5,
-      "carbohydrates": 12.0,
+      "carbohydrates": 12,
       "fats": 1.5,
       "fiber": 1.7,
-      "sugar": 0.0,
+      "sugar": 0,
       "iron": 0.9,
       "calcium": 9,
       "magnesium": 27,
@@ -1271,12 +1795,22 @@
       "glycemicIndex": 55
     },
     "ayurvedic": {
-      "rasa": ["Sweet"],
-      "guna": ["Heavy", "Oily"],
+      "rasa": [
+        "Sweet"
+      ],
+      "guna": [
+        "Heavy",
+        "Oily"
+      ],
       "virya": "Heating",
       "digestibility": "Easy",
-      "suitableFor": ["Child", "Adult", "Elderly"]
-    }
+      "suitableFor": [
+        "Child",
+        "Adult",
+        "Elderly"
+      ]
+    },
+    "dietType": "Vegetarian"
   },
   {
     "id": 44,
@@ -1285,7 +1819,9 @@
     "calories": 123,
     "servingSize": "100g cooked",
     "region": "North Indian",
-    "season": ["All"],
+    "season": [
+      "All"
+    ],
     "nutrition": {
       "calories": 123,
       "protein": 2.3,
@@ -1293,19 +1829,29 @@
       "fats": 0.4,
       "fiber": 3.8,
       "sugar": 0.3,
-      "iron": 1.0,
+      "iron": 1,
       "calcium": 11,
       "magnesium": 22,
       "potassium": 93,
       "glycemicIndex": 28
     },
     "ayurvedic": {
-      "rasa": ["Sweet", "Astringent"],
-      "guna": ["Light", "Dry"],
+      "rasa": [
+        "Sweet",
+        "Astringent"
+      ],
+      "guna": [
+        "Light",
+        "Dry"
+      ],
       "virya": "Cooling",
       "digestibility": "Easy",
-      "suitableFor": ["Adult", "Elderly"]
-    }
+      "suitableFor": [
+        "Adult",
+        "Elderly"
+      ]
+    },
+    "dietType": "Vegetarian"
   },
   {
     "id": 45,
@@ -1314,14 +1860,16 @@
     "calories": 119,
     "servingSize": "100g cooked",
     "region": "North Indian",
-    "season": ["Winter"],
+    "season": [
+      "Winter"
+    ],
     "nutrition": {
       "calories": 119,
       "protein": 3.5,
       "carbohydrates": 23.7,
-      "fats": 1.0,
+      "fats": 1,
       "fiber": 1.3,
-      "sugar": 0.0,
+      "sugar": 0,
       "iron": 0.8,
       "calcium": 8,
       "magnesium": 44,
@@ -1329,12 +1877,21 @@
       "glycemicIndex": 71
     },
     "ayurvedic": {
-      "rasa": ["Sweet", "Astringent"],
-      "guna": ["Light", "Dry"],
+      "rasa": [
+        "Sweet",
+        "Astringent"
+      ],
+      "guna": [
+        "Light",
+        "Dry"
+      ],
       "virya": "Heating",
       "digestibility": "Moderate",
-      "suitableFor": ["Adult"]
-    }
+      "suitableFor": [
+        "Adult"
+      ]
+    },
+    "dietType": "Vegetarian"
   },
   {
     "id": 46,
@@ -1343,14 +1900,16 @@
     "calories": 329,
     "servingSize": "100g dry",
     "region": "Western Indian",
-    "season": ["All"],
+    "season": [
+      "All"
+    ],
     "nutrition": {
       "calories": 329,
       "protein": 10.4,
       "carbohydrates": 72.6,
       "fats": 1.9,
       "fiber": 6.7,
-      "sugar": 0.0,
+      "sugar": 0,
       "iron": 3.9,
       "calcium": 25,
       "magnesium": 165,
@@ -1358,12 +1917,21 @@
       "glycemicIndex": 62
     },
     "ayurvedic": {
-      "rasa": ["Sweet", "Astringent"],
-      "guna": ["Light", "Dry"],
+      "rasa": [
+        "Sweet",
+        "Astringent"
+      ],
+      "guna": [
+        "Light",
+        "Dry"
+      ],
       "virya": "Heating",
       "digestibility": "Moderate",
-      "suitableFor": ["Adult"]
-    }
+      "suitableFor": [
+        "Adult"
+      ]
+    },
+    "dietType": "Vegetarian"
   },
   {
     "id": 47,
@@ -1372,14 +1940,16 @@
     "calories": 328,
     "servingSize": "100g dry",
     "region": "South Indian",
-    "season": ["All"],
+    "season": [
+      "All"
+    ],
     "nutrition": {
       "calories": 328,
       "protein": 7.3,
-      "carbohydrates": 72.0,
+      "carbohydrates": 72,
       "fats": 1.3,
       "fiber": 11.5,
-      "sugar": 0.0,
+      "sugar": 0,
       "iron": 3.9,
       "calcium": 344,
       "magnesium": 137,
@@ -1387,12 +1957,23 @@
       "glycemicIndex": 49
     },
     "ayurvedic": {
-      "rasa": ["Sweet", "Astringent"],
-      "guna": ["Light", "Dry"],
+      "rasa": [
+        "Sweet",
+        "Astringent"
+      ],
+      "guna": [
+        "Light",
+        "Dry"
+      ],
       "virya": "Heating",
       "digestibility": "Easy",
-      "suitableFor": ["Child", "Adult", "Elderly"]
-    }
+      "suitableFor": [
+        "Child",
+        "Adult",
+        "Elderly"
+      ]
+    },
+    "dietType": "Vegetarian"
   },
   {
     "id": 48,
@@ -1401,13 +1982,15 @@
     "calories": 86,
     "servingSize": "100g cooked",
     "region": "Pan-Indian",
-    "season": ["Winter"],
+    "season": [
+      "Winter"
+    ],
     "nutrition": {
       "calories": 86,
       "protein": 1.6,
       "carbohydrates": 20.1,
       "fats": 0.1,
-      "fiber": 3.0,
+      "fiber": 3,
       "sugar": 4.2,
       "iron": 0.6,
       "calcium": 30,
@@ -1418,12 +2001,23 @@
       "glycemicIndex": 63
     },
     "ayurvedic": {
-      "rasa": ["Sweet"],
-      "guna": ["Heavy", "Oily"],
+      "rasa": [
+        "Sweet"
+      ],
+      "guna": [
+        "Heavy",
+        "Oily"
+      ],
       "virya": "Cooling",
       "digestibility": "Easy",
-      "suitableFor": ["Child", "Adult", "Elderly"]
-    }
+      "suitableFor": [
+        "Child",
+        "Adult",
+        "Elderly"
+      ]
+    },
+    "dietType": "Vegetarian",
+    "nameHindi": "Sweet आलू"
   },
   {
     "id": 49,
@@ -1432,10 +2026,12 @@
     "calories": 26,
     "servingSize": "100g cooked",
     "region": "Pan-Indian",
-    "season": ["All"],
+    "season": [
+      "All"
+    ],
     "nutrition": {
       "calories": 26,
-      "protein": 1.0,
+      "protein": 1,
       "carbohydrates": 6.5,
       "fats": 0.1,
       "fiber": 0.5,
@@ -1445,16 +2041,27 @@
       "magnesium": 12,
       "potassium": 340,
       "vitaminA": 426,
-      "vitaminC": 9.0,
+      "vitaminC": 9,
       "glycemicIndex": 75
     },
     "ayurvedic": {
-      "rasa": ["Sweet"],
-      "guna": ["Heavy", "Oily"],
+      "rasa": [
+        "Sweet"
+      ],
+      "guna": [
+        "Heavy",
+        "Oily"
+      ],
       "virya": "Cooling",
       "digestibility": "Easy",
-      "suitableFor": ["Child", "Adult", "Elderly"]
-    }
+      "suitableFor": [
+        "Child",
+        "Adult",
+        "Elderly"
+      ]
+    },
+    "dietType": "Vegetarian",
+    "nameHindi": "कद्दू (Kaddu)"
   },
   {
     "id": 50,
@@ -1463,27 +2070,39 @@
     "calories": 13,
     "servingSize": "100g cooked",
     "region": "Pan-Indian",
-    "season": ["All"],
+    "season": [
+      "All"
+    ],
     "nutrition": {
       "calories": 13,
       "protein": 0.4,
-      "carbohydrates": 3.0,
+      "carbohydrates": 3,
       "fats": 0.1,
       "fiber": 0.5,
-      "sugar": 0.0,
+      "sugar": 0,
       "iron": 0.4,
       "calcium": 30,
       "magnesium": 10,
       "potassium": 87,
-      "vitaminC": 14.0,
+      "vitaminC": 14,
       "glycemicIndex": 15
     },
     "ayurvedic": {
-      "rasa": ["Sweet"],
-      "guna": ["Light", "Soft"],
+      "rasa": [
+        "Sweet"
+      ],
+      "guna": [
+        "Light",
+        "Soft"
+      ],
       "virya": "Cooling",
       "digestibility": "Easy",
-      "suitableFor": ["Child", "Adult", "Elderly"]
-    }
+      "suitableFor": [
+        "Child",
+        "Adult",
+        "Elderly"
+      ]
+    },
+    "dietType": "Vegetarian"
   }
 ]

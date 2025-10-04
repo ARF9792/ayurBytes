@@ -39,8 +39,17 @@ export const TranslationProvider: React.FC<TranslationProviderProps> = ({ childr
     loadTranslations();
   }, [language]);
 
-  const t = (key: string): string => {
-    return translations[key] || key;
+  const t = (key: string, params?: Record<string, string>): string => {
+    let translation = translations[key] || key;
+    
+    // Replace parameters in the translation
+    if (params) {
+      Object.entries(params).forEach(([param, value]) => {
+        translation = translation.replace(`{{${param}}}`, value);
+      });
+    }
+    
+    return translation;
   };
 
   return (

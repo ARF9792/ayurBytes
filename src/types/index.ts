@@ -172,13 +172,20 @@ export interface NutritionalInfo {
 }
 
 /**
+ * Diet type classification
+ */
+export type DietType = 'Vegetarian' | 'Non-Vegetarian' | 'Vegan' | 'Eggetarian';
+
+/**
  * Food item structure
  */
 export interface Food {
   id: number;
   name: string;
+  nameHindi?: string; // Hindi translation
   category: FoodCategory;
   calories: number;
+  dietType?: DietType; // Veg/Non-veg classification
   ayurvedic: AyurvedicProperties;
   nutrition?: NutritionalInfo; // Enhanced nutritional data
   servingSize?: string; // e.g., "100g", "1 cup"
@@ -256,3 +263,7 @@ export interface ApiError {
 
 // Re-export recipe types
 export * from './recipe';
+
+// Re-export dashboard types
+export * from './dashboard';
+export * from './advancedDiet';

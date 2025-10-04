@@ -220,17 +220,17 @@ export function getAyurvedicGuidelines(profile: PatientProfile): string[] {
   }
   
   // Medical condition guidelines
-  if (medicalConditions.includes('Diabetes')) {
+  if (medicalConditions && medicalConditions.includes('Diabetes')) {
     guidelines.push('Choose low glycemic index foods');
     guidelines.push('Avoid refined sugars and white rice');
   }
   
-  if (medicalConditions.includes('Hypertension')) {
+  if (medicalConditions && medicalConditions.includes('Hypertension')) {
     guidelines.push('Reduce sodium intake');
     guidelines.push('Include potassium-rich foods');
   }
   
-  if (medicalConditions.includes('Acidity')) {
+  if (medicalConditions && medicalConditions.includes('Acidity')) {
     guidelines.push('Avoid sour and spicy foods');
     guidelines.push('Include cooling foods like cucumber and coconut');
   }

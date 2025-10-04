@@ -6,17 +6,25 @@ import {
   filterFoodsByPrakriti, 
   filterFoodsByAgeGroup,
   filterFoodsByDigestibility,
-  filterFoodsByCategory 
+  filterFoodsByCategory,
+  filterFoodsByAllergies
 } from '@/src/lib/dietHelpers';
 import { 
   calculateNutritionalSummary, 
   getAyurvedicGuidelines,
   getMealTimings
 } from '@/src/lib/nutritionHelpers';
+import { calculateCaloricNeeds } from '@/src/lib/caloricCalculator';
+import { 
+  getCurrentSeason, 
+  filterSeasonalFoods,
+  getSeasonalGuidelines 
+} from '@/src/lib/seasonalRecommendations';
+import { generateWeeklyMealPlan } from '@/src/lib/weeklyPlanGenerator';
 
 export async function POST(request: NextRequest) {
   try {
-    const { age, prakriti, profile } = await request.json();
+    const { age, prakriti, profile, generateWeekly } = await request.json();
 
     if (!prakriti || age === undefined) {
       return NextResponse.json(
@@ -27,10 +35,57 @@ export async function POST(request: NextRequest) {
     
     // Determine the age group
     const ageGroup = getAgeGroup(age);
+    
+    // Get current season for seasonal recommendations
+    const currentSeason = getCurrentSeason();
 
-    // Filter foods based on prakriti and age group
-    const prakritiFiltered = filterFoodsByPrakriti(foods as unknown as Food[], prakriti as PrakritiType);
-    const filteredFoods = filterFoodsByAgeGroup(prakritiFiltered, ageGroup);
+    // Filter foods based on prakriti, age group, and season
+    let availableFoods = foods as unknown as Food[];
+    
+    // Apply allergen filtering first (safety critical)
+    if (profile?.allergies && Array.isArray(profile.allergies) && profile.allergies.length > 0) {
+      availableFoods = filterFoodsByAllergies(availableFoods, profile.allergies);
+    }
+    
+    const prakritiFiltered = filterFoodsByPrakriti(availableFoods, prakriti as PrakritiType);
+    const ageFiltered = filterFoodsByAgeGroup(prakritiFiltered, ageGroup);
+    
+    // Apply seasonal filtering for optimal recommendations
+    const seasonalFoods = filterSeasonalFoods(ageFiltered, currentSeason);
+    const filteredFoods = seasonalFoods.length > 10 ? seasonalFoods : ageFiltered; // Fallback if too few seasonal foods
+    
+    // If weekly plan requested and profile provided, generate weekly plan
+    if (generateWeekly && profile) {
+      const patientProfile = profile as PatientProfile;
+      
+      // Calculate caloric needs from profile
+      const caloricNeeds = calculateCaloricNeeds(
+        patientProfile.weight || 70, // default weight if not provided
+        patientProfile.height || 170, // default height if not provided
+        patientProfile.age,
+        patientProfile.gender?.toLowerCase() as 'male' | 'female' || 'male',
+        patientProfile.activityLevel?.toLowerCase() as 'sedentary' | 'light' | 'moderate' | 'active' | 'very_active' || 'sedentary',
+        'maintain' // default weight goal
+      );
+      
+      const weeklyPlan = await generateWeeklyMealPlan(
+        patientProfile,
+        caloricNeeds,
+        {
+          considerSeasonal: true,
+          avoidRepetition: true
+        }
+      );
+      
+      // Add seasonal guidelines
+      const seasonalGuidelines = getSeasonalGuidelines(currentSeason);
+      
+      return NextResponse.json({
+        ...weeklyPlan,
+        seasonalGuidelines,
+        currentSeason
+      });
+    }
 
     // Create diet plan
     const dietPlan: DietPlan = {
@@ -77,6 +132,14 @@ export async function POST(request: NextRequest) {
       dietPlan.guidelines = getAyurvedicGuidelines(patientProfile);
       dietPlan.mealTimings = getMealTimings();
       dietPlan.generatedAt = new Date();
+      
+      // Add seasonal information
+      const seasonalGuidelines = getSeasonalGuidelines(currentSeason);
+      (dietPlan as any).seasonalInfo = {
+        currentSeason,
+        guidelines: seasonalGuidelines,
+        seasonalFoodsUsed: seasonalFoods.length
+      };
     }
 
     return NextResponse.json(dietPlan);

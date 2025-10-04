@@ -172,32 +172,63 @@ export function calculatePerServingNutrition(
 ): { nutrition: NutritionalInfo; calories: number } {
   const servings = recipe.servings || 1;
 
+  // Return empty nutrition if recipe.nutrition is undefined
+  if (!recipe.nutrition) {
+    return {
+      nutrition: {
+        macronutrients: {
+          protein: 0,
+          carbohydrates: 0,
+          fats: 0,
+          fiber: 0,
+          sugar: 0
+        },
+        micronutrients: {
+          vitamins: {
+            vitaminA: 0,
+            vitaminC: 0,
+            vitaminD: 0,
+            vitaminB12: 0
+          },
+          minerals: {
+            calcium: 0,
+            iron: 0,
+            magnesium: 0,
+            potassium: 0,
+            zinc: 0
+          }
+        }
+      },
+      calories: 0
+    };
+  }
+
   const nutrition: NutritionalInfo = {
     macronutrients: {
-      protein: Math.round((recipe.nutrition.macronutrients.protein / servings) * 100) / 100,
-      carbohydrates: Math.round((recipe.nutrition.macronutrients.carbohydrates / servings) * 100) / 100,
-      fats: Math.round((recipe.nutrition.macronutrients.fats / servings) * 100) / 100,
-      fiber: Math.round((recipe.nutrition.macronutrients.fiber / servings) * 100) / 100,
-      sugar: Math.round((recipe.nutrition.macronutrients.sugar / servings) * 100) / 100
+      protein: Math.round((recipe.nutrition.macronutrients?.protein || 0) / servings * 100) / 100,
+      carbohydrates: Math.round((recipe.nutrition.macronutrients?.carbohydrates || 0) / servings * 100) / 100,
+      fats: Math.round((recipe.nutrition.macronutrients?.fats || 0) / servings * 100) / 100,
+      fiber: Math.round((recipe.nutrition.macronutrients?.fiber || 0) / servings * 100) / 100,
+      sugar: Math.round((recipe.nutrition.macronutrients?.sugar || 0) / servings * 100) / 100
     },
     micronutrients: {
       vitamins: {
-        vitaminA: Math.round((recipe.nutrition.micronutrients.vitamins.vitaminA / servings) * 100) / 100,
-        vitaminC: Math.round((recipe.nutrition.micronutrients.vitamins.vitaminC / servings) * 100) / 100,
-        vitaminD: Math.round((recipe.nutrition.micronutrients.vitamins.vitaminD / servings) * 100) / 100,
-        vitaminB12: Math.round((recipe.nutrition.micronutrients.vitamins.vitaminB12 / servings) * 100) / 100
+        vitaminA: Math.round((recipe.nutrition.micronutrients?.vitamins?.vitaminA || 0) / servings * 100) / 100,
+        vitaminC: Math.round((recipe.nutrition.micronutrients?.vitamins?.vitaminC || 0) / servings * 100) / 100,
+        vitaminD: Math.round((recipe.nutrition.micronutrients?.vitamins?.vitaminD || 0) / servings * 100) / 100,
+        vitaminB12: Math.round((recipe.nutrition.micronutrients?.vitamins?.vitaminB12 || 0) / servings * 100) / 100
       },
       minerals: {
-        calcium: Math.round((recipe.nutrition.micronutrients.minerals.calcium / servings) * 100) / 100,
-        iron: Math.round((recipe.nutrition.micronutrients.minerals.iron / servings) * 100) / 100,
-        magnesium: Math.round((recipe.nutrition.micronutrients.minerals.magnesium / servings) * 100) / 100,
-        potassium: Math.round((recipe.nutrition.micronutrients.minerals.potassium / servings) * 100) / 100,
-        zinc: Math.round((recipe.nutrition.micronutrients.minerals.zinc / servings) * 100) / 100
+        calcium: Math.round((recipe.nutrition.micronutrients?.minerals?.calcium || 0) / servings * 100) / 100,
+        iron: Math.round((recipe.nutrition.micronutrients?.minerals?.iron || 0) / servings * 100) / 100,
+        magnesium: Math.round((recipe.nutrition.micronutrients?.minerals?.magnesium || 0) / servings * 100) / 100,
+        potassium: Math.round((recipe.nutrition.micronutrients?.minerals?.potassium || 0) / servings * 100) / 100,
+        zinc: Math.round((recipe.nutrition.micronutrients?.minerals?.zinc || 0) / servings * 100) / 100
       }
     }
   };
 
-  const calories = Math.round(recipe.totalCalories / servings);
+  const calories = Math.round((recipe.totalCalories || 0) / servings);
 
   return { nutrition, calories };
 }

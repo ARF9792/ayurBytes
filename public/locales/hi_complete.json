@@ -4,9 +4,6 @@
   "app.footer": "यह आयुर्वेदिक आहार योजना के लिए एक प्रूफ ऑफ कॉन्सेप्ट एप्लिकेशन है।",
   "app.generating": "आपकी व्यक्तिगत योजना तैयार की जा रही है...",
   "app.tagline": "प्राचीन आयुर्वेदिक ज्ञान द्वारा संचालित",
-  "app.welcome": "स्वागत है, {{name}}",
-  "app.user": "उपयोगकर्ता",
-  "app.poweredBy": "प्राचीन आयुर्वेदिक ज्ञान और आधुनिक पोषण विज्ञान द्वारा संचालित",
   
   "nav.home": "होम",
   "nav.quickstart": "त्वरित शुरुआत",
@@ -106,9 +103,6 @@
   "diet.vegan": "शुद्ध शाकाहारी",
   "diet.eggetarian": "अंडाहारी",
   
-  "dietPlan.latestPlan": "आपकी नवीनतम आहार योजना",
-  "dietPlan.latestPlanDesc": "यहाँ आपकी व्यक्तिगत आयुर्वेदिक भोजन योजना है। रेसिपी खोजें या डैशबोर्ड में अपनी प्रगति ट्रैक करें।",
-  
   "dashboard.title": "आपका स्वास्थ्य डैशबोर्ड",
   "dashboard.subtitle": "अपनी प्रगति और पोषण रुझान ट्रैक करें",
   "dashboard.overview": "अवलोकन",
@@ -151,8 +145,6 @@
   "common.previous": "पिछला",
   "common.submit": "जमा करें",
   "common.welcome": "स्वागत है",
-  "common.findRecipes": "रेसिपी खोजें",
-  "common.viewDashboard": "डैशबोर्ड देखें",
   
   "language.english": "English",
   "language.hindi": "हिन्दी (Hindi)",

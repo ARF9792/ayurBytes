@@ -4,6 +4,8 @@ import { Utensils, Sun, Moon, Flame, Snowflake, Zap, Star, Heart, Leaf, Clock, B
 import { useTranslation } from '@/src/contexts/TranslationContext';
 import { Food, DietPlan, PatientProfile, NutritionalSummary as NutritionalSummaryType } from '@/src/types';
 import NutritionalSummary from './NutritionalSummary';
+import DietTypeBadge from './DietTypeBadge';
+import QRCodeShare from './QRCodeShare';
 import { downloadDietPlanPDF, shareDietPlanPDF } from '@/src/lib/pdfExport';
 import { useState } from 'react';
 
@@ -172,8 +174,14 @@ export default function DietChartDisplay({ dietPlan, patientProfile, nutritional
                           <div className="flex-1">
                             <h4 className="text-xl font-bold text-gray-800 mb-2 group-hover:text-emerald-600 transition-colors duration-300">
                               {food.name}
+                              {(food as any).nameHindi && (
+                                <span className="text-sm font-normal text-gray-500 ml-2">
+                                  ({(food as any).nameHindi})
+                                </span>
+                              )}
                             </h4>
                             <div className="flex flex-wrap gap-3 mb-4">
+                              <DietTypeBadge dietType={(food as any).dietType} size="sm" />
                               <span className="px-3 py-1 rounded-full text-sm font-medium bg-gradient-to-r from-gray-100 to-gray-200 text-gray-700 border border-gray-200/50">
                                 {food.category}
                               </span>
@@ -258,6 +266,7 @@ export default function DietChartDisplay({ dietPlan, patientProfile, nutritional
           <Download className="w-4 h-4" />
           Download PDF
         </button>
+        <QRCodeShare dietPlan={dietPlan} />
       </div>
 
       {/* Nutritional Summary */}

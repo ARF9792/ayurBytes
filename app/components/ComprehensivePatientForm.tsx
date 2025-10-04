@@ -20,7 +20,7 @@ import {
 import { PRAKRITI_CONFIG } from '@/src/constants';
 
 interface ComprehensivePatientFormProps {
-  onSubmit: (data: PatientProfile) => void;
+  onSubmit: (data: PatientProfile, generateWeekly?: boolean) => void;
 }
 
 export default function ComprehensivePatientForm({ onSubmit }: ComprehensivePatientFormProps) {
@@ -30,6 +30,7 @@ export default function ComprehensivePatientForm({ onSubmit }: ComprehensivePati
   const [height, setHeight] = useState<number>(0);
   const [weight, setWeight] = useState<number>(0);
   const [bmi, setBmi] = useState<number>(0);
+  const [generateWeekly, setGenerateWeekly] = useState(false);
 
   // Calculate BMI when height or weight changes
   const calculateBMI = (h: number, w: number) => {
@@ -111,7 +112,7 @@ export default function ComprehensivePatientForm({ onSubmit }: ComprehensivePati
       return;
     }
 
-    onSubmit(data);
+    onSubmit(data, generateWeekly);
   };
 
   const prakritis = [
@@ -620,18 +621,34 @@ export default function ComprehensivePatientForm({ onSubmit }: ComprehensivePati
             </div>
           </div>
 
-          {/* Submit Button */}
-          <button
-            type="submit"
-            className="group relative w-full overflow-hidden bg-gradient-to-r from-emerald-500 via-teal-500 to-cyan-500 text-white py-6 px-8 rounded-2xl hover:from-emerald-600 hover:via-teal-600 hover:to-cyan-600 focus:outline-none focus:ring-4 focus:ring-emerald-200 transition-all duration-500 font-bold text-xl shadow-2xl shadow-emerald-500/25 hover:shadow-3xl hover:shadow-emerald-500/30 transform hover:-translate-y-1"
-          >
-            <div className="absolute inset-0 bg-gradient-to-r from-white/20 via-transparent to-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
-            <span className="relative flex items-center justify-center gap-3">
-              <Sparkles className="w-6 h-6" />
-              Generate Personalized Diet Plan
-            </span>
-          </button>
+          {/* Submit Buttons */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <button
+              type="submit"
+              onClick={() => setGenerateWeekly(false)}
+              className="group relative w-full overflow-hidden bg-gradient-to-r from-emerald-500 via-teal-500 to-cyan-500 text-white py-6 px-8 rounded-2xl hover:from-emerald-600 hover:via-teal-600 hover:to-cyan-600 focus:outline-none focus:ring-4 focus:ring-emerald-200 transition-all duration-500 font-bold text-xl shadow-2xl shadow-emerald-500/25 hover:shadow-3xl hover:shadow-emerald-500/30 transform hover:-translate-y-1"
+            >
+              <div className="absolute inset-0 bg-gradient-to-r from-white/20 via-transparent to-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
+              <span className="relative flex items-center justify-center gap-3">
+                <Sparkles className="w-6 h-6" />
+                Single Day Plan
+              </span>
+            </button>
+
+            <button
+              type="submit"
+              onClick={() => setGenerateWeekly(true)}
+              className="group relative w-full overflow-hidden bg-gradient-to-r from-purple-500 via-pink-500 to-rose-500 text-white py-6 px-8 rounded-2xl hover:from-purple-600 hover:via-pink-600 hover:to-rose-600 focus:outline-none focus:ring-4 focus:ring-purple-200 transition-all duration-500 font-bold text-xl shadow-2xl shadow-purple-500/25 hover:shadow-3xl hover:shadow-purple-500/30 transform hover:-translate-y-1"
+            >
+              <div className="absolute inset-0 bg-gradient-to-r from-white/20 via-transparent to-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
+              <span className="relative flex items-center justify-center gap-3">
+                <Calendar className="w-6 h-6" />
+                7-Day Weekly Plan
+              </span>
+            </button>
+          </div>
         </form>
       </div>
     </div>

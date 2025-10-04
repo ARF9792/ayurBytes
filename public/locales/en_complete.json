@@ -4,9 +4,6 @@
   "app.footer": "This is a Proof of Concept application for Ayurvedic diet planning.",
   "app.generating": "Generating your personalized plan...",
   "app.tagline": "Powered by Ancient Ayurvedic Wisdom",
-  "app.welcome": "Welcome, {{name}}",
-  "app.user": "User",
-  "app.poweredBy": "Powered by ancient Ayurvedic wisdom and modern nutrition science",
   
   "nav.home": "Home",
   "nav.quickstart": "Quick Start",
@@ -106,9 +103,6 @@
   "diet.vegan": "Vegan",
   "diet.eggetarian": "Eggetarian",
   
-  "dietPlan.latestPlan": "Your Latest Diet Plan",
-  "dietPlan.latestPlanDesc": "Here's your personalized Ayurvedic meal plan. Explore recipes or track your progress in the Dashboard.",
-  
   "dashboard.title": "Your Health Dashboard",
   "dashboard.subtitle": "Track your progress and nutrition trends",
   "dashboard.overview": "Overview",
@@ -151,8 +145,6 @@
   "common.previous": "Previous",
   "common.submit": "Submit",
   "common.welcome": "Welcome",
-  "common.findRecipes": "Find Recipes",
-  "common.viewDashboard": "View Dashboard",
   
   "language.english": "English",
   "language.hindi": "हिन्दी (Hindi)",
