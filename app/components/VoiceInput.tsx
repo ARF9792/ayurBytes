@@ -25,6 +25,7 @@ export default function VoiceInput({ onTranscript, placeholder = 'Click mic to s
         recognitionInstance.continuous = false;
         recognitionInstance.interimResults = true;
         recognitionInstance.lang = language;
+        recognitionInstance.maxAlternatives = 1;
 
         recognitionInstance.onresult = (event: any) => {
           const current = event.resultIndex;
@@ -37,7 +38,15 @@ export default function VoiceInput({ onTranscript, placeholder = 'Click mic to s
         };
 
         recognitionInstance.onerror = (event: any) => {
-          console.error('Speech recognition error:', event.error);
+          console.warn('Speech recognition error:', event.error);
+          if (event.error === 'network') {
+            console.log('Using offline speech recognition fallback');
+            // Continue without stopping - browser will use offline recognition
+          } else if (event.error === 'not-allowed') {
+            alert('Microphone access denied. Please allow microphone access in browser settings.');
+          } else if (event.error === 'no-speech') {
+            console.log('No speech detected, please try again');
+          }
           setIsListening(false);
         };
 

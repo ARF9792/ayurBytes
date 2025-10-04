@@ -69,10 +69,10 @@ export default function PatientForm({ onSubmit }: PatientFormProps) {
   ];
 
   return (
-    <div className="relative overflow-hidden bg-gradient-to-br from-white via-emerald-50/30 to-teal-50/50 rounded-3xl shadow-2xl border border-emerald-100/50 backdrop-blur-sm">
-      <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/5 via-transparent to-teal-500/5"></div>
-      <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-emerald-200/20 to-teal-200/20 rounded-full -translate-y-16 translate-x-16"></div>
-      <div className="absolute bottom-0 left-0 w-24 h-24 bg-gradient-to-tr from-teal-200/20 to-emerald-200/20 rounded-full translate-y-12 -translate-x-12"></div>
+    <div className="relative overflow-hidden bg-gradient-to-br from-white via-emerald-50/30 to-teal-50/50 dark:from-gray-800 dark:via-gray-800 dark:to-gray-900 rounded-3xl shadow-2xl border border-emerald-100/50 dark:border-gray-700 backdrop-blur-sm">
+      <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/5 via-transparent to-teal-500/5 dark:from-emerald-500/10 dark:to-teal-500/10"></div>
+      <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-emerald-200/20 dark:from-emerald-600/10 to-teal-200/20 dark:to-teal-600/10 rounded-full -translate-y-16 translate-x-16"></div>
+      <div className="absolute bottom-0 left-0 w-24 h-24 bg-gradient-to-tr from-teal-200/20 dark:from-teal-600/10 to-emerald-200/20 dark:to-emerald-600/10 rounded-full translate-y-12 -translate-x-12"></div>
 
       <div className="relative p-8">
         <div className="text-center mb-10">
@@ -92,7 +92,7 @@ export default function PatientForm({ onSubmit }: PatientFormProps) {
         <form onSubmit={handleSubmit} className="space-y-10">
           {/* Age and Gender inputs remain the same */}
           <div className="space-y-4">
-            <label htmlFor="age" className="flex items-center gap-3 text-lg font-bold text-gray-800 mb-4">
+            <label htmlFor="age" className="flex items-center gap-3 text-lg font-bold text-gray-800 dark:text-white mb-4">
               <div className="w-8 h-8 bg-gradient-to-br from-emerald-400 to-teal-500 rounded-lg flex items-center justify-center shadow-md">
                 <Calendar className="w-4 h-4 text-white" />
               </div>
@@ -106,7 +106,7 @@ export default function PatientForm({ onSubmit }: PatientFormProps) {
                 required
                 min="1"
                 max="120"
-                className="w-full px-6 py-5 border-2 border-gray-200/50 rounded-2xl focus:outline-none focus:ring-4 focus:ring-emerald-100 focus:border-emerald-400 transition-all duration-300 text-lg font-semibold bg-white/80 backdrop-blur-sm hover:bg-white hover:shadow-lg group-hover:border-emerald-300"
+                className="w-full px-6 py-5 border-2 border-gray-200/50 dark:border-gray-700 rounded-2xl focus:outline-none focus:ring-4 focus:ring-emerald-100 dark:focus:ring-emerald-900/50 focus:border-emerald-400 transition-all duration-300 text-lg font-semibold bg-white/80 dark:bg-gray-900/80 text-gray-900 dark:text-white backdrop-blur-sm hover:bg-white dark:hover:bg-gray-900 hover:shadow-lg group-hover:border-emerald-300"
                 placeholder={t('form.age.placeholder')}
               />
               <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-emerald-500/5 to-teal-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
@@ -114,7 +114,7 @@ export default function PatientForm({ onSubmit }: PatientFormProps) {
           </div>
 
           <div className="space-y-4">
-            <label htmlFor="gender" className="flex items-center gap-3 text-lg font-bold text-gray-800 mb-4">
+            <label htmlFor="gender" className="flex items-center gap-3 text-lg font-bold text-gray-800 dark:text-white mb-4">
               <div className="w-8 h-8 bg-gradient-to-br from-emerald-400 to-teal-500 rounded-lg flex items-center justify-center shadow-md">
                 <Users className="w-4 h-4 text-white" />
               </div>
@@ -125,7 +125,7 @@ export default function PatientForm({ onSubmit }: PatientFormProps) {
                 id="gender"
                 name="gender"
                 required
-                className="w-full px-6 py-5 border-2 border-gray-200/50 rounded-2xl focus:outline-none focus:ring-4 focus:ring-emerald-100 focus:border-emerald-400 transition-all duration-300 text-lg font-semibold bg-white/80 backdrop-blur-sm hover:bg-white hover:shadow-lg appearance-none cursor-pointer group-hover:border-emerald-300"
+                className="w-full px-6 py-5 border-2 border-gray-200/50 dark:border-gray-700 rounded-2xl focus:outline-none focus:ring-4 focus:ring-emerald-100 dark:focus:ring-emerald-900/50 focus:border-emerald-400 transition-all duration-300 text-lg font-semibold bg-white/80 dark:bg-gray-900/80 text-gray-900 dark:text-white backdrop-blur-sm hover:bg-white dark:hover:bg-gray-900 hover:shadow-lg appearance-none cursor-pointer group-hover:border-emerald-300"
               >
                 <option value="">{t('form.gender.placeholder')}</option>
                 <option value="Male">{t('form.gender.male')}</option>
@@ -138,7 +138,7 @@ export default function PatientForm({ onSubmit }: PatientFormProps) {
           </div>
           
           <div className="space-y-6">
-            <div className="flex items-center gap-3 text-lg font-bold text-gray-800 mb-6">
+            <div className="flex items-center gap-3 text-lg font-bold text-gray-800 dark:text-white mb-6">
               <div className="w-8 h-8 bg-gradient-to-br from-emerald-400 to-teal-500 rounded-lg flex items-center justify-center shadow-md">
                 <Sparkles className="w-4 h-4 text-white" />
               </div>
@@ -170,22 +170,22 @@ export default function PatientForm({ onSubmit }: PatientFormProps) {
                             {prakriti.icon}
                           </div>
                           <div>
-                            <h3 className="text-2xl font-bold text-gray-800 mb-1">
+                            <h3 className="text-2xl font-bold text-gray-800 dark:text-white mb-1">
                               {prakriti.label}
                             </h3>
-                            <p className="text-sm text-gray-600 font-medium">
+                            <p className="text-sm text-gray-600 dark:text-gray-400 font-medium">
                               {prakriti.description}
                             </p>
                           </div>
                         </div>
                         
-                        <p className="text-gray-600 mb-4 leading-relaxed">
+                        <p className="text-gray-600 dark:text-gray-400 mb-4 leading-relaxed">
                           {prakriti.detailedDescription}
                         </p>
                         
                         <div className="flex flex-wrap gap-2">
                           {prakriti.traits.map((trait, index) => (
-                            <span key={index} className="px-3 py-1 rounded-full text-sm font-medium bg-white/60 text-gray-700 border border-white/50 shadow-sm">
+                            <span key={index} className="px-3 py-1 rounded-full text-sm font-medium bg-white/60 dark:bg-gray-700/60 text-gray-700 dark:text-gray-300 border border-white/50 dark:border-gray-600 shadow-sm">
                               {trait}
                             </span>
                           ))}
@@ -193,7 +193,7 @@ export default function PatientForm({ onSubmit }: PatientFormProps) {
                       </div>
                       
                       <div className="relative ml-4">
-                        <div className={`w-6 h-6 border-2 rounded-full flex items-center justify-center transition-all duration-300 shadow-sm ${selectedPrakriti === prakriti.value ? 'border-emerald-500 bg-emerald-500' : 'border-gray-300'}`}>
+                        <div className={`w-6 h-6 border-2 rounded-full flex items-center justify-center transition-all duration-300 shadow-sm ${selectedPrakriti === prakriti.value ? 'border-emerald-500 bg-emerald-500' : 'border-gray-300 dark:border-gray-600'}`}>
                           <div className={`w-2 h-2 bg-white rounded-full transition-opacity duration-300 ${selectedPrakriti === prakriti.value ? 'opacity-100' : 'opacity-0'}`}></div>
                         </div>
                         <div className={`absolute inset-0 rounded-full bg-emerald-400 transition-opacity animate-ping ${selectedPrakriti === prakriti.value ? 'opacity-20' : 'opacity-0'}`}></div>
